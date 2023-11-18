@@ -1,11 +1,10 @@
 import { BookWrapper } from '@/components/Book/Book.styled';
-import { CoverLeft, CoverRight } from '@/components/Book/components/Cover/Cover.styled';
+import Cover from '@/common/common/Cover';
 
 function Book() {
   return (
     <BookWrapper>
-      <CoverLeft />
-      <CoverRight />
+      <Cover />
 
       book
     </BookWrapper>
