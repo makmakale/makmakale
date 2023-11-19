@@ -28,7 +28,7 @@ export const CoverLeft = styled(Cover)`
   &::before {
     position: absolute;
     content: '';
-    left: 100%;
+    left: calc(100% - 1.5px);
     z-index: 1;
     width: 3px;
     height: 100%;

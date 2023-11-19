@@ -1,4 +1,4 @@
-import { CoverLeft, CoverRight } from '@/common/common/Cover/Cover.styled';
+import { CoverLeft, CoverRight } from '@/common/components/Cover/Cover.styled';
 
 function Cover() {
   return (
