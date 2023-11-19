@@ -83,7 +83,7 @@ export const PaginationButton = styled.div`
   }
 `;
 
-export const PageContent = styled.div`
+export const PageWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

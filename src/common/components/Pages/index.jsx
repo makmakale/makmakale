@@ -1,7 +1,7 @@
 import {
   LeftPage,
-  PageContent,
   PagesContainer,
+  PageWrapper,
   PaginationButton,
   RightPage,
 } from '@/common/components/Pages/Pages.styled';
@@ -15,20 +15,19 @@ function Pages() {
     <PagesContainer>
       <LeftPage />
 
-      {bookPages.map((page, index) => (
-        <RightPage key={page} id="page" data-page-id={page} zIndex={bookPages.length - index}>
-          <PageContent className={`${page % 2 !== 0 ? 'back' : 'front'}`}>
-            <div>
-              Page
-              {' '}
-              {page}
-            </div>
-          </PageContent>
+      {bookPages.map(({ page, title, component }, index) => {
+        const Component = component;
 
-          <PaginationButton onClick={page % 2 !== 0 ? handleNextPage : handlePrevPage} />
-        </RightPage>
-      ))}
+        return (
+          <RightPage key={page} id="page" data-page-id={page} zIndex={bookPages.length - index}>
+            <PageWrapper className={`${page % 2 !== 0 ? 'back' : 'front'}`}>
+              {component ? <Component title={title} /> : null}
+            </PageWrapper>
 
+            <PaginationButton onClick={page % 2 !== 0 ? handleNextPage : handlePrevPage} />
+          </RightPage>
+        );
+      })}
     </PagesContainer>
   );
 }

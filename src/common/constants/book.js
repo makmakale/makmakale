@@ -1,4 +1,14 @@
-export const bookPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+import ProfilePage from '@/components/Pages/ProfilePage';
+import BlankPage from '@/common/components/BlankPage';
+
+export const bookPages = [
+  { page: 1, title: 'Profile', component: ProfilePage },
+  { page: 2, title: '2', component: BlankPage },
+  { page: 3, title: '3', component: BlankPage },
+  { page: 4, title: '4', component: BlankPage },
+  { page: 5, title: '5', component: BlankPage },
+  { page: 6, title: '6', component: BlankPage },
+];
 
 export const initialPage = 1;
 

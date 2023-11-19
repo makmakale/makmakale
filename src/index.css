@@ -9,9 +9,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #efd4b9 !important;
-    color: #333 !important;
+    background-color: #efd4b9;
+    color: #333;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
+    letter-spacing: 0.65px;
 }
