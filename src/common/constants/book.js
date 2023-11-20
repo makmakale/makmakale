@@ -3,11 +3,13 @@ import BlankPage from '@/common/components/BlankPage';
 
 export const bookPages = [
   { page: 1, title: 'Profile', component: ProfilePage },
-  { page: 2, title: '2', component: BlankPage },
-  { page: 3, title: '3', component: BlankPage },
-  { page: 4, title: '4', component: BlankPage },
-  { page: 5, title: '5', component: BlankPage },
-  { page: 6, title: '6', component: BlankPage },
+  { page: 2, title: 'Work Experience', component: BlankPage },
+  { page: 3, component: BlankPage },
+  { page: 4, component: BlankPage },
+  { page: 5, component: BlankPage },
+  { page: 6, component: BlankPage },
+  { page: 7, component: BlankPage },
+  { page: 8, component: BlankPage },
 ];
 
 export const initialPage = 1;

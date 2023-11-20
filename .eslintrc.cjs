@@ -3,7 +3,13 @@ module.exports = {
     "browser": true,
     "es2021": true
   },
-  "extends": "airbnb",
+  "extends":[
+    "airbnb",
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+  ],
   "overrides": [
     {
       "env": {

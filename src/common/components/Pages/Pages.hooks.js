@@ -1,1 +1,57 @@
-import { useEffect, useState } from 'react';import { bookPages, initialPage, pagesOnScreen } from '@/common/constants/book';export const usePages = () => {  const [currentPage, setCurrentPage] = useState(initialPage);  const totalPages = bookPages.length;  function changePage(pageNumber) {    const pages = document.querySelectorAll('#page');    pages.forEach((page, index) => {      const pNumber = Number(page.dataset.pageId);      if (pNumber >= pageNumber) {        page.classList.remove('turn');        setTimeout(() => {          page.style.zIndex = pages.length - index;        }, 500);      } else {        page.classList.add('turn');        setTimeout(() => {          page.style.zIndex = pages.length + index;        }, 500);      }    });  }  function handlePrevPage() {    setCurrentPage((prev) => {      const prevPage = prev - pagesOnScreen < 1 ? 1 : prev - pagesOnScreen;      changePage(prevPage);      return prevPage;    });  }  function handleNextPage() {    setCurrentPage((prev) => {      const lastPage = totalPages % 2 === 0 ? totalPages + 1 : totalPages;      const nextPage = prev + pagesOnScreen > totalPages ? lastPage : prev + pagesOnScreen;      changePage(nextPage);      return nextPage;    });  }  useEffect(() => {    const handleKeyPress = (e) => {      e.preventDefault();      if (e.code === 'ArrowLeft') {        handlePrevPage();      } else if (e.code === 'ArrowRight') {        handleNextPage();      }    };    document.addEventListener('keyup', handleKeyPress);    return () => {      document.removeEventListener('keyup', handleKeyPress);    };  }, []);  return { currentPage, handlePrevPage, handleNextPage };};
+import { useEffect, useState } from 'react';
+import { bookPages, initialPage, pagesOnScreen } from '@/common/constants/book';
+import { animatePages } from '@/common/components/Pages/Pages.utils';
+
+export const usePages = () => {
+  const [, setActivePage] = useState(initialPage);
+  const totalPages = bookPages.length;
+  const lastPage = totalPages % 2 === 0 ? totalPages + 1 : totalPages;
+
+  function handlePrevPage() {
+    setActivePage((prev) => {
+      const nextPage = prev - pagesOnScreen < 1 ? 1 : prev - pagesOnScreen;
+      animatePages(nextPage, prev);
+      return nextPage;
+    });
+  }
+
+  function handleNextPage() {
+    setActivePage((prev) => {
+      const nextPage = prev + pagesOnScreen > totalPages ? lastPage : prev + pagesOnScreen;
+      animatePages(nextPage, prev);
+      return nextPage;
+    });
+  }
+
+  function moveToPage(pageNumber) {
+    setActivePage((prev) => {
+      const nextPage = pageNumber % 2 === 0 ? pageNumber + 1 : pageNumber;
+      animatePages(nextPage, prev);
+      return nextPage;
+    });
+  }
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      e.preventDefault();
+
+      if (e.code === 'ArrowLeft') {
+        handlePrevPage();
+      } else if (e.code === 'ArrowRight') {
+        handleNextPage();
+      } else if (e.code === 'Home') {
+        moveToPage(initialPage);
+      } else if (e.code === 'End') {
+        moveToPage(lastPage);
+      }
+    };
+
+    document.addEventListener('keyup', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keyup', handleKeyPress);
+    };
+  }, []);
+
+  return { handlePrevPage, handleNextPage, moveToPage };
+};

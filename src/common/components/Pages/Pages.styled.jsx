@@ -29,6 +29,7 @@ const Page = styled.div`
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
   }
 `;
 
@@ -56,7 +57,6 @@ export const RightPage = styled(Page)`
   transform-origin: left;
   transition: transform 1s cubic-bezier(.645, .045, .355, 1);
   padding-left: 3rem;
-  z-index: ${(props) => props.zIndex};
 
   &::before {
     background: ${(props) => props.theme.rightPageBg};
