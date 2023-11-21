@@ -1,5 +1,7 @@
 export const theme = {
   primaryColor: '#0080cd',
+  primaryColorLight: '#a3dcff',
+  primaryColorDark: '#005087',
   whiteColor: '#fff',
   cover: 'linear-gradient(45deg, #6E9AB9, #9dd6e0)',
   coverPadding: '1.5rem',

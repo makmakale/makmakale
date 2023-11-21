@@ -7,24 +7,13 @@ import {
 } from '@/common/components/Pages/Pages.styled';
 import { bookPages } from '@/common/constants/book';
 import { usePages } from '@/common/components/Pages/Pages.hooks';
-import PageContent from '@/common/components/PageContent';
 
 function Pages() {
-  const { handlePrevPage, handleNextPage, moveToPage } = usePages();
+  const { handlePrevPage, handleNextPage } = usePages();
 
   return (
     <PagesContainer>
-      <LeftPage>
-        <PageWrapper className="back">
-          <PageContent title="Content">
-            {bookPages.map(({ page, title }) => (
-              <button key={page} type="button" onClick={() => moveToPage(page)}>
-                {title ?? `Page ${page}`}
-              </button>
-            ))}
-          </PageContent>
-        </PageWrapper>
-      </LeftPage>
+      <LeftPage />
 
       {bookPages.map(({ page, title, component: Component }, index) => (
         <RightPage key={`page-${page}`} id="page" data-page-id={page} style={{ zIndex: bookPages.length - index }}>

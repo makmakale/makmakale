@@ -1,6 +1,7 @@
 import PageContent from '@/common/components/PageContent';
 import {
   ProfileDescription,
+  ProfileDownloadCV,
   ProfileImage,
   ProfileJobTitle,
   ProfileName,
@@ -30,6 +31,14 @@ function ProfilePage() {
 
       <ProfileAbout />
       <ProfileContacts />
+
+      <ProfileDownloadCV>
+        <span />
+        <span />
+        <span />
+        <span />
+        Download CV
+      </ProfileDownloadCV>
     </PageContent>
   );
 }
