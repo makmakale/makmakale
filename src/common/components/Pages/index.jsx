@@ -15,10 +15,10 @@ function Pages() {
     <PagesContainer>
       <LeftPage />
 
-      {bookPages.map(({ page, title, component: Component }, index) => (
+      {bookPages.map(({ page, component: Component, ...rest }, index) => (
         <RightPage key={`page-${page}`} id="page" data-page-id={page} style={{ zIndex: bookPages.length - index }}>
           <PageWrapper className={`${page % 2 !== 0 ? 'back' : 'front'}`}>
-            {Component ? <Component title={title} /> : null}
+            {Component ? <Component {...rest} /> : null}
           </PageWrapper>
 
           <PaginationButton onClick={page % 2 !== 0 ? handleNextPage : handlePrevPage} />
