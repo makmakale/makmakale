@@ -20,6 +20,7 @@ const Page = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -78,7 +79,7 @@ export const PaginationButton = styled.div`
   z-index: 999;
   transition: 500ms;
 
-  &:hover{
+  &:hover {
     background: #eee;
   }
 `;

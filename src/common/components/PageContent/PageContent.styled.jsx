@@ -6,7 +6,6 @@ export const PageContainer = styled.div`
   gap: 1rem;
   align-items: ${(props) => (props.centered ? 'center' : 'flex-start')};
   height: 100%;
-  overflow: hidden;
 `;
 
 export const PageTitle = styled.h1`

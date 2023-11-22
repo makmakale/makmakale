@@ -3,7 +3,7 @@ module.exports = {
     "browser": true,
     "es2021": true
   },
-  "extends":[
+  "extends": [
     "airbnb",
     'eslint:recommended',
     'plugin:react/recommended',
@@ -34,6 +34,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'max-len': ['error', {'code':120}]
   },
   "settings": {
     "import/resolver": {
