@@ -1,6 +1,7 @@
 import ProfilePage from '@/components/Pages/ProfilePage';
 import BlankPage from '@/common/components/BlankPage';
 import Experience from '@/components/Pages/Experience';
+import Education from '@/components/Pages/Education';
 
 export const bookPages = [
   { page: 1, title: 'Profile', component: ProfilePage },
@@ -18,7 +19,7 @@ export const bookPages = [
   },
   { page: 6, component: Experience, part: 5 },
   { page: 7, component: Experience, part: 6 },
-  { page: 8, title: 'Education', component: BlankPage },
+  { page: 8, title: 'Education', component: Education },
   { page: 9, title: 'Skills', component: BlankPage },
 ];
 
