@@ -19,7 +19,7 @@ const Page = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 2rem;
   overflow: hidden;
 
   &::before,
@@ -65,22 +65,6 @@ export const RightPage = styled(Page)`
 
   &.turn {
     transform: rotateY(-180deg);
-  }
-`;
-
-export const PaginationButton = styled.div`
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: ${(props) => props.theme.coverPadding};
-  cursor: pointer;
-  z-index: 999;
-  transition: 500ms;
-
-  &:hover {
-    background: #eee;
   }
 `;
 

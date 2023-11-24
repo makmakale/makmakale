@@ -53,5 +53,5 @@ export const usePages = () => {
     };
   }, []);
 
-  return { handlePrevPage, handleNextPage, moveToPage };
+  return { handlePrevPage, handleNextPage, lastPage };
 };

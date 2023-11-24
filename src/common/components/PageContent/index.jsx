@@ -3,7 +3,7 @@ import { PageContainer, PageTitle } from '@/common/components/PageContent/PageCo
 
 function PageContent({ title, centered, children }) {
   return (
-    <PageContainer centered={centered}>
+    <PageContainer className={centered ? 'center' : ''}>
       {title ? <PageTitle>{title}</PageTitle> : null}
       {children}
     </PageContainer>
