@@ -6,8 +6,8 @@ export const ProfileImage = styled.div`
   border-radius: 50%;
   border: .25rem solid ${(props) => props.theme.primaryColor};
   overflow: hidden;
-  
-  img{
+
+  img {
     height: 100%;
   }
 `;
@@ -52,8 +52,8 @@ export const ProfileSectionTitle = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  &:hover{
+
+  &:hover {
     color: ${(props) => props.theme.whiteColor};
     background: ${(props) => props.theme.primaryColor};
     border-color: ${(props) => props.theme.whiteColor};
@@ -63,29 +63,29 @@ export const ProfileSectionTitle = styled.h3`
 export const ProfileTable = styled.table`
   margin-bottom: .5rem;
   width: 100%;
-  
-  tr{
+
+  tr {
     margin-top: 5px;
     margin-bottom: 5px;
-    
-    &:nth-child(odd){
+
+    &:nth-child(odd) {
       background: #eee;
     }
-    
-    td{
+
+    td {
       padding: 3px 7px;
-      
-      &:first-child{
+
+      &:first-child {
         font-weight: 600;
       }
-      
-      .small{
+
+      .small {
         margin-left: .5rem;
         font-size: .8rem;
         color: #777;
       }
-      
-      a{
+
+      a {
         color: ${(props) => props.theme.primaryColor};
         text-decoration: none;
       }
@@ -102,78 +102,100 @@ export const ProfileDownloadCV = styled.div`
   text-transform: uppercase;
   background: ${(props) => props.theme.primaryColor};
   color: ${(props) => props.theme.whiteColor};
-  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
   overflow: hidden;
-  
-  &::before{
+  cursor: pointer;
+  transition: 500ms;
+
+  &:hover {
+    box-shadow: 0 10px 30px ${(props) => props.theme.primaryColor};
+  }
+
+  &::before {
     content: '';
     position: absolute;
     top: 2px;
     left: 2px;
     bottom: 2px;
     width: 100%;
-    background: rgba(255,255,255,.15);
+    background: rgba(255, 255, 255, .15);
     transform: skewX(45deg) translateX(-50%);
   }
-  
-  span:nth-child(1){
+
+  span:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 2px;
     background: linear-gradient(to right,
-      ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight});
+    ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight});
     animation: animateSpan1 2s linear infinite;
   }
 
-  span:nth-child(2){
+  span:nth-child(2) {
     position: absolute;
     top: 0;
     right: 0;
     width: 2px;
     height: 100%;
     background: linear-gradient(to bottom,
-      ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
+    ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
     animation: animateSpan2 2s linear infinite;
   }
 
-  span:nth-child(3){
+  span:nth-child(3) {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
     background: linear-gradient(to left,
-      ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
+    ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
     animation: animateSpan3 2s linear infinite;
   }
 
-  span:nth-child(4){
+  span:nth-child(4) {
     position: absolute;
     top: 0;
     left: 0;
     width: 2px;
     height: 100%;
     background: linear-gradient(to top,
-      ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
+    ${({ theme }) => theme.primaryColorDark}, ${({ theme }) => theme.primaryColorLight}););
     animation: animateSpan4 2s linear infinite;
   }
-  
+
   @keyframes animateSpan1 {
-    0%{transform: translateX(-100%)}
-    100%{transform: translateX(100%)}
+    0% {
+      transform: translateX(-100%)
+    }
+    100% {
+      transform: translateX(100%)
+    }
   }
   @keyframes animateSpan2 {
-    0%{transform: translateY(-100%)}
-    100%{transform: translateY(100%)}
+    0% {
+      transform: translateY(-100%)
+    }
+    100% {
+      transform: translateY(100%)
+    }
   }
   @keyframes animateSpan3 {
-    0%{transform: translateX(100%)}
-    100%{transform: translateX(-100%)}
+    0% {
+      transform: translateX(100%)
+    }
+    100% {
+      transform: translateX(-100%)
+    }
   }
   @keyframes animateSpan4 {
-    0%{transform: translateY(100%)}
-    100%{transform: translateY(-100%)}
+    0% {
+      transform: translateY(100%)
+    }
+    100% {
+      transform: translateY(-100%)
+    }
   }
 `;
