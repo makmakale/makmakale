@@ -1,27 +1,21 @@
 import ProfilePage from '@/components/Pages/ProfilePage';
-import BlankPage from '@/common/components/BlankPage';
 import Experience from '@/components/Pages/Experience';
 import Education from '@/components/Pages/Education';
+import Skills from '@/components/Pages/Skills';
 
-export const bookPages = [
-  { page: 1, title: 'Profile', component: ProfilePage },
-  {
-    page: 2, title: 'Work Experience', component: Experience, part: 1,
-  },
-  {
-    page: 3, component: Experience, part: 2,
-  },
-  {
-    page: 4, component: Experience, part: 3,
-  },
-  {
-    page: 5, component: Experience, part: 4,
-  },
-  { page: 6, component: Experience, part: 5 },
-  { page: 7, component: Experience, part: 6 },
-  { page: 8, title: 'Education', component: Education },
-  { page: 9, title: 'Skills', component: BlankPage },
+const pages = [
+  { title: 'Profile', component: ProfilePage },
+  { title: 'Work Experience', component: Experience, part: 1 },
+  { component: Experience, part: 2 },
+  { component: Experience, part: 3 },
+  { component: Experience, part: 4 },
+  { component: Experience, part: 5 },
+  { component: Experience, part: 6 },
+  { title: 'Education', component: Education },
+  { title: 'Skills', component: Skills },
 ];
+
+export const bookPages = pages.map((page, index) => ({ ...page, page: index + 1 }));
 
 export const initialPage = 1;
 
