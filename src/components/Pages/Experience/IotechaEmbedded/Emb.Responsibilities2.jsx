@@ -3,6 +3,7 @@ import { ProjectResponsibilities } from '@/common/components/Experience';
 function EmbResponsibilities2() {
   return (
     <ProjectResponsibilities>
+      <li>adding new validators</li>
       <li>adding new transformers (converting values received from the backend for display on the UI);</li>
       <li>development of a list of Wi-Fi networks and connections to them;</li>
       <li>development of new schemes for new customers;</li>

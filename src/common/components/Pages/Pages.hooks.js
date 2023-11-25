@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { bookPages, initialPage, pagesOnScreen } from '@/common/constants/book';
+import {
+  bookPages, coverRotateTimeout, initialPage, pagesOnScreen,
+} from '@/common/constants/book';
 import { animatePages } from '@/common/components/Pages/Pages.utils';
 import { useSearchParams } from 'react-router-dom';
 
@@ -58,12 +60,14 @@ export const usePages = () => {
         return prev;
       });
     } else {
-      animatePages(initPage, lastPage);
+      animatePages(initPage, initialPage);
     }
   }
 
   useEffect(() => {
-    initialAnimation();
+    const coverTimeout = setTimeout(() => {
+      initialAnimation();
+    }, coverRotateTimeout - 800);
     const handleKeyPress = (e) => {
       e.preventDefault();
 
@@ -82,6 +86,7 @@ export const usePages = () => {
 
     return () => {
       document.removeEventListener('keyup', handleKeyPress);
+      clearTimeout(coverTimeout);
     };
   }, []);
 

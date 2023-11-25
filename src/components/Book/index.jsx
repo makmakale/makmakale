@@ -6,7 +6,6 @@ function Book() {
   return (
     <BookWrapper>
       <Cover />
-
       <Pages />
     </BookWrapper>
   );

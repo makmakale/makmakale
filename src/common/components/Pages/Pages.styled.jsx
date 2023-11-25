@@ -8,19 +8,24 @@ export const PagesContainer = styled.div`
   z-index: 2;
 `;
 
-const Page = styled.div`
+export const Page = styled.div`
   position: absolute;
   top: 0;
   width: 50%;
   height: 100%;
   background: ${(props) => props.theme.pageColor};
-  box-shadow: ${(props) => props.theme.pageShadow};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.5rem 1.5rem 2rem;
   overflow: hidden;
+
+  right: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+  padding-left: 3rem;
 
   &::before,
   &::after {
@@ -32,25 +37,9 @@ const Page = styled.div`
     height: 100%;
     z-index: -1;
   }
-`;
-
-export const LeftPage = styled(Page)`
-  padding-right: 3rem;
-
-  &::after {
-    background: ${(props) => props.theme.leftPageBg};
-  }
-`;
-
-export const RightPage = styled(Page)`
-  right: 0;
-  transform-style: preserve-3d;
-  transform-origin: left;
-  transition: transform 1s cubic-bezier(.645, .045, .355, 1);
-  padding-left: 3rem;
 
   &::before {
-    background: ${(props) => props.theme.rightPageBg};
+    background: ${(props) => props.theme.pageBg};
   }
 
   &.turn {
