@@ -1,4 +1,4 @@
-import { ProfileSection, ProfileSectionTitle, ProfileTable } from '@/components/Pages/ProfilePage/Profile.styled';
+import { ProfileSection, ProfileSectionTitle, ProfileTable } from '@/components/Pages/Profile/Profile.styled';
 
 function ProfileContacts() {
   return (
@@ -20,7 +20,14 @@ function ProfileContacts() {
           </tr>
           <tr>
             <td>LinkedIn:</td>
-            <td><a href="https://www.linkedin.com/in/makmakale" target="_blank" rel="noreferrer">linkedin.com/in/makmakale</a></td>
+            <td>
+              <a
+                href="https://www.linkedin.com/in/makmakale"
+                target="_blank"
+                rel="noreferrer"
+              >linkedin.com/in/makmakale
+              </a>
+            </td>
           </tr>
         </tbody>
       </ProfileTable>

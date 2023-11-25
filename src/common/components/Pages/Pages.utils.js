@@ -25,21 +25,30 @@ export function animatePages(pageNumber, currentPage) {
   searchPages.forEach((page, index) => {
     setTimeout(() => {
       const pageId = Number(page.dataset.pageId);
+      const naiborPage = pages[pageId];
       if (pageNumber < currentPage) {
         // animate pages from current to earlier
         page.classList.remove('turn');
-        pages[pageId].classList.remove('turn');
+        if (naiborPage) {
+          naiborPage.classList.remove('turn');
+        }
         setTimeout(() => {
           page.style.zIndex = pages.length - pageId + 1;
-          pages[pageId].style.zIndex = pages.length - pageId;
+          if (naiborPage) {
+            naiborPage.style.zIndex = pages.length - pageId;
+          }
         }, 500);
       } else {
         // animate pages from current to forward
         page.classList.add('turn');
-        pages[pageId].classList.add('turn');
+        if (naiborPage) {
+          naiborPage.classList.add('turn');
+        }
         setTimeout(() => {
           page.style.zIndex = pages.length + pageId - 1;
-          pages[pageId].style.zIndex = pages.length + pageId;
+          if (naiborPage) {
+            naiborPage.style.zIndex = pages.length + pageId;
+          }
         }, 500);
       }
     }, (index + 1) * 200 + 100);

@@ -8,7 +8,7 @@ export const Chip = styled.div`
   justify-content: center;
   height: 32px;
   color: white;
-  background-color: #aaa;
+  background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 16px;
   white-space: nowrap;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,

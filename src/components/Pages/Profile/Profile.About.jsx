@@ -1,5 +1,5 @@
-import { ProfileSection, ProfileSectionTitle, ProfileTable } from '@/components/Pages/ProfilePage/Profile.styled';
-import { getMyAge } from '@/components/Pages/ProfilePage/Profile.utils';
+import { ProfileSection, ProfileSectionTitle, ProfileTable } from '@/components/Pages/Profile/Profile.styled';
+import { getMyAge } from '@/components/Pages/Profile/Profile.utils';
 
 function ProfileAbout() {
   const age = getMyAge();

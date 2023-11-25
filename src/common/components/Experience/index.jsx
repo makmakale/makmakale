@@ -28,7 +28,7 @@ export const ProjectImage = styled.img`
   max-width: 200px;
   height: auto;
   vertical-align: middle;
-  border: 1px solid ${({ theme }) => theme.primaryColor};
+  outline: 1px solid ${({ theme }) => theme.primaryColor};
   border-radius: 10px;
 `;
 

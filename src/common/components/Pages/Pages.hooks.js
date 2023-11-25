@@ -1,37 +1,69 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { bookPages, initialPage, pagesOnScreen } from '@/common/constants/book';
 import { animatePages } from '@/common/components/Pages/Pages.utils';
+import { useSearchParams } from 'react-router-dom';
 
 export const usePages = () => {
-  const [, setActivePage] = useState(initialPage);
   const totalPages = bookPages.length;
   const lastPage = totalPages % 2 === 0 ? totalPages + 1 : totalPages;
 
+  const [searchParams, setSearchParams] = useSearchParams({ page: initialPage.toString() });
+  const activePage = Number(searchParams.get('page'));
+
   function handlePrevPage() {
-    setActivePage((prev) => {
-      const nextPage = prev - pagesOnScreen < 1 ? 1 : prev - pagesOnScreen;
-      animatePages(nextPage, prev);
-      return nextPage;
-    });
+    setSearchParams((prev) => {
+      const prevPage = Number(prev.get('page'));
+      const nextPage = prevPage - pagesOnScreen < 1 ? 1 : prevPage - pagesOnScreen;
+      animatePages(nextPage, prevPage);
+      prev.set('page', nextPage.toString());
+      return prev;
+    }, { replace: true });
   }
 
   function handleNextPage() {
-    setActivePage((prev) => {
-      const nextPage = prev + pagesOnScreen > totalPages ? lastPage : prev + pagesOnScreen;
-      animatePages(nextPage, prev);
-      return nextPage;
-    });
+    setSearchParams((prev) => {
+      const prevPage = Number(prev.get('page'));
+      const nextPage = prevPage + pagesOnScreen > totalPages ? lastPage : prevPage + pagesOnScreen;
+      animatePages(nextPage, prevPage);
+      prev.set('page', nextPage.toString());
+      return prev;
+    }, { replace: true });
   }
 
   function moveToPage(pageNumber) {
-    setActivePage((prev) => {
+    setSearchParams((prev) => {
+      const prevPage = Number(prev.get('page'));
       const nextPage = pageNumber % 2 === 0 ? pageNumber + 1 : pageNumber;
-      animatePages(nextPage, prev);
-      return nextPage;
-    });
+      animatePages(nextPage, prevPage);
+      prev.set('page', nextPage.toString());
+      return prev;
+    }, { replace: true });
+  }
+
+  function initialAnimation() {
+    let initPage = activePage;
+
+    if (activePage > lastPage) {
+      initPage = lastPage;
+    } else if (activePage < initialPage) {
+      initPage = initialPage;
+    } else {
+      initPage = activePage % 2 === 0 ? activePage + 1 : activePage;
+    }
+
+    if (initPage !== activePage) {
+      setSearchParams((prev) => {
+        prev.set('page', initPage.toString());
+        animatePages(initPage, lastPage);
+        return prev;
+      });
+    } else {
+      animatePages(initPage, lastPage);
+    }
   }
 
   useEffect(() => {
+    initialAnimation();
     const handleKeyPress = (e) => {
       e.preventDefault();
 
