@@ -5,11 +5,11 @@ import {
   ProfileImage,
   ProfileJobTitle,
   ProfileName,
-} from '@/components/Pages/ProfilePage/Profile.styled';
+} from '@/components/Pages/Profile/Profile.styled';
 import photo from '@/assets/images/profile/photo.jpg';
-import { getExperienceYears } from '@/components/Pages/ProfilePage/Profile.utils';
-import ProfileAbout from '@/components/Pages/ProfilePage/Profile.About';
-import ProfileContacts from '@/components/Pages/ProfilePage/Profile.Contacts';
+import { getExperienceYears } from '@/components/Pages/Profile/Profile.utils';
+import ProfileAbout from '@/components/Pages/Profile/Profile.About';
+import ProfileContacts from '@/components/Pages/Profile/Profile.Contacts';
 
 function ProfilePage() {
   const experience = getExperienceYears();

@@ -40,16 +40,6 @@ export const LeftPage = styled(Page)`
   &::after {
     background: ${(props) => props.theme.leftPageBg};
   }
-
-  .page-content {
-    font-style: italic;
-    z-index: 1;
-
-    &.front {
-      padding-right: 3rem;
-      transform: unset;
-    }
-  }
 `;
 
 export const RightPage = styled(Page)`

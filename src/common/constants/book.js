@@ -1,4 +1,4 @@
-import ProfilePage from '@/components/Pages/ProfilePage';
+import ProfilePage from '@/components/Pages/Profile';
 import Experience from '@/components/Pages/Experience';
 import Education from '@/components/Pages/Education';
 import Skills from '@/components/Pages/Skills';
