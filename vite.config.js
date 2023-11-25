@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/profile/',
+  base: process.env.NODE_ENV !== 'development' ? '/profile/' : '.',
   plugins: [react({
     include: /\.(jsx|tsx)$/,
     babel: {

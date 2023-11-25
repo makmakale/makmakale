@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import useEscapeKey from '@/common/hooks/useEscapeKey';
-import { FullScreenImage } from '@/common/context/FullScreenImage.styled';
+import { FullScreenImage } from '@/common/context/FullScreenImage/FullScreenImage.styled';
 
 const FullScreenImageContext = createContext();
 
