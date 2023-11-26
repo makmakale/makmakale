@@ -1,39 +1,30 @@
 import { CoverContent, CoverLeft, CoverRight } from '@/common/components/Cover/Cover.styled';
-import { coverRotateTimeout, totalPages } from '@/common/constants/book';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useBookContext } from '@/common/context/Book';
+import { BookWrapper } from '@/components/Book/Book.styled';
+import { useCoverHook } from '@/common/components/Cover/Cover.hooks';
+import Pages from '@/common/components/Pages';
 
 function Cover() {
   const leftCoverRef = useRef(null);
+  const { isBookOpened, openBook } = useBookContext();
 
-  useEffect(() => {
-    // start left cover with totalPages count + 1 for show it over pages
-    leftCoverRef.current.style.zIndex = totalPages + 1;
-
-    const coverTimeout = setTimeout(() => {
-      leftCoverRef.current.classList.add('turn');
-
-      // change zIndex for showing pages above cover
-      setTimeout(() => {
-        leftCoverRef.current.style.zIndex = 1;
-      }, 500);
-    }, coverRotateTimeout);
-
-    return () => {
-      clearTimeout(coverTimeout);
-    };
-  }, []);
+  useCoverHook(leftCoverRef);
 
   return (
-    <>
-      <CoverLeft ref={leftCoverRef}>
+    <BookWrapper open={isBookOpened}>
+      <CoverLeft ref={leftCoverRef} onClick={openBook}>
         <CoverContent>
           <h3>Maksim Makarenko</h3>
           <h1>Portfolio</h1>
           <p>2023</p>
         </CoverContent>
       </CoverLeft>
+
+      <Pages />
+
       <CoverRight />
-    </>
+    </BookWrapper>
   );
 }
 

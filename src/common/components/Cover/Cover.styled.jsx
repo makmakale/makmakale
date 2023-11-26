@@ -1,21 +1,18 @@
 import styled from 'styled-components';
-import { coverRotateTimeout } from '@/common/constants/book';
+import { coverRotateTimeout, totalPages } from '@/common/constants/book';
 
 const Cover = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.cover};
-  border-top-left-radius: 0.6rem;
-  border-bottom-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
   box-shadow: ${({ theme }) => theme.coverShadow};
-  transform-origin: right;
+  display: flex;
+  align-items: center;
 `;
 
 export const CoverContent = styled.div`
-  transform: rotateY(180deg);
   width: 100%;
   height: 100%;
   display: flex;
@@ -23,7 +20,7 @@ export const CoverContent = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  transition: opacity ${coverRotateTimeout - 200}ms;
+  transition: opacity ${coverRotateTimeout / 2}ms;
 
   h1 {
     font-size: 4rem;
@@ -35,11 +32,15 @@ export const CoverContent = styled.div`
 `;
 
 export const CoverLeft = styled(Cover)`
-  transform: rotateY(180deg);
+  position: absolute;
+  transform-origin: center left;
+  z-index: ${totalPages + 1};
   transition: transform ${coverRotateTimeout}ms cubic-bezier(.645, .045, .355, 1);
+  cursor: pointer;
 
   &.turn {
-    transform: rotateY(0deg);
+    transform: rotateY(-180deg);
+    cursor: unset;
 
     ${CoverContent} {
       opacity: 0;
@@ -48,6 +49,6 @@ export const CoverLeft = styled(Cover)`
 `;
 
 export const CoverRight = styled(Cover)`
+  position: relative;
   z-index: -1;
-  transform: rotateY(180deg);
 `;

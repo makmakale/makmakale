@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 export const PagesContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 3rem);
+  margin-top: 1.5rem;
   perspective: 300rem;
-  z-index: 2;
+  z-index: 1;
 `;
 
 export const Page = styled.div`
   position: absolute;
   top: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: ${(props) => props.theme.pageColor};
   display: flex;

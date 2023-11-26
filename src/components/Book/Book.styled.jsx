@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const BookWrapper = styled.div`
   position: relative;
-  width: 80rem;
+  width: 40rem;
   height: 60rem;
-  padding: ${(props) => props.theme.coverPadding};
+  transition-duration: 1s;
+  transform: translateX(${(props) => (props.open ? '20rem' : 0)});
 `;
