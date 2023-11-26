@@ -1,16 +1,12 @@
 import { CoverContent, CoverLeft, CoverRight } from '@/common/components/Cover/Cover.styled';
-import { coverRotateTimeout, totalPages } from '@/common/constants/book';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useCoverHook } from '@/common/components/Cover/Cover.hooks';
+import { useBookContext } from '@/common/context/Book';
 
 function Cover() {
   const leftCoverRef = useRef(null);
 
-  useEffect(() => {
-    // start left cover with totalPages count + 1 for show it over pages
-    leftCoverRef.current.style.zIndex = totalPages + 1;
-
-    const coverTimeout = setTimeout(() => {
-      leftCoverRef.current.classList.add('turn');
+  useCoverHook(leftCoverRef);
 
       // change zIndex for showing pages above cover
       setTimeout(() => {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { coverRotateTimeout } from '@/common/constants/book';
+import { coverRotateTimeout, totalPages } from '@/common/constants/book';
 
 const Cover = styled.div`
   position: absolute;
@@ -35,6 +35,7 @@ export const CoverContent = styled.div`
 `;
 
 export const CoverLeft = styled(Cover)`
+  z-index: ${totalPages + 1};
   transform: rotateY(180deg);
   transition: transform ${coverRotateTimeout}ms cubic-bezier(.645, .045, .355, 1);
 
