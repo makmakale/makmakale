@@ -1,73 +1,39 @@
 import { useEffect } from 'react';
-import {
-  bookPages, coverRotateTimeout, initialPage, pagesOnScreen,
-} from '@/common/constants/book';
-import { animatePages } from '@/common/components/Pages/Pages.utils';
+import { coverRotateTimeout, initialPage, lastPageNavigation } from '@/common/constants/book';
+import { setNextPage, setPreviousPage, setSpecificPage } from '@/common/components/Pages/Pages.utils';
 import { useSearchParams } from 'react-router-dom';
 
 export const usePages = () => {
-  const totalPages = bookPages.length;
-  const lastPage = totalPages % 2 === 0 ? totalPages + 1 : totalPages;
-
   const [searchParams, setSearchParams] = useSearchParams({ page: initialPage.toString() });
   const activePage = Number(searchParams.get('page'));
 
-  function handlePrevPage() {
+  function handleSearchParams(fn, ...args) {
     setSearchParams((prev) => {
-      const prevPage = Number(prev.get('page'));
-      const nextPage = prevPage - pagesOnScreen < 1 ? 1 : prevPage - pagesOnScreen;
-      animatePages(nextPage, prevPage);
-      prev.set('page', nextPage.toString());
+      fn(prev, ...args);
       return prev;
     }, { replace: true });
+  }
+
+  function handlePrevPage() {
+    handleSearchParams(setPreviousPage);
   }
 
   function handleNextPage() {
-    setSearchParams((prev) => {
-      const prevPage = Number(prev.get('page'));
-      const nextPage = prevPage + pagesOnScreen > totalPages ? lastPage : prevPage + pagesOnScreen;
-      animatePages(nextPage, prevPage);
-      prev.set('page', nextPage.toString());
-      return prev;
-    }, { replace: true });
+    handleSearchParams(setNextPage);
   }
 
   function moveToPage(pageNumber) {
-    setSearchParams((prev) => {
-      const prevPage = Number(prev.get('page'));
-      const nextPage = pageNumber % 2 === 0 ? pageNumber + 1 : pageNumber;
-      animatePages(nextPage, prevPage);
-      prev.set('page', nextPage.toString());
-      return prev;
-    }, { replace: true });
+    handleSearchParams(setSpecificPage, pageNumber);
   }
 
   function initialAnimation() {
-    let initPage = activePage;
-
-    if (activePage > lastPage) {
-      initPage = lastPage;
-    } else if (activePage < initialPage) {
-      initPage = initialPage;
-    } else {
-      initPage = activePage % 2 === 0 ? activePage + 1 : activePage;
-    }
-
-    if (initPage !== activePage) {
-      setSearchParams((prev) => {
-        prev.set('page', initPage.toString());
-        animatePages(initPage, lastPage);
-        return prev;
-      });
-    } else {
-      animatePages(initPage, initialPage);
-    }
+    handleSearchParams(setSpecificPage, activePage, initialPage);
   }
 
   useEffect(() => {
     const coverTimeout = setTimeout(() => {
       initialAnimation();
-    }, coverRotateTimeout - 800);
+    }, coverRotateTimeout + 500);
     const handleKeyPress = (e) => {
       e.preventDefault();
 
@@ -78,7 +44,7 @@ export const usePages = () => {
       } else if (e.code === 'Home') {
         moveToPage(initialPage);
       } else if (e.code === 'End') {
-        moveToPage(lastPage);
+        moveToPage(lastPageNavigation);
       }
     };
 
@@ -90,5 +56,5 @@ export const usePages = () => {
     };
   }, []);
 
-  return { handlePrevPage, handleNextPage, lastPage };
+  return { handlePrevPage, handleNextPage };
 };

@@ -1,26 +1,37 @@
-import { CoverLeft, CoverRight } from '@/common/components/Cover/Cover.styled';
-import { bookPages, coverRotateTimeout } from '@/common/constants/book';
-import { useEffect, useState } from 'react';
+import { CoverContent, CoverLeft, CoverRight } from '@/common/components/Cover/Cover.styled';
+import { coverRotateTimeout, totalPages } from '@/common/constants/book';
+import { useEffect, useRef } from 'react';
 
 function Cover() {
-  const totalPages = bookPages.length;
-  const [initIndex, setInitIndex] = useState(totalPages + 1);
-  const [className, setClassName] = useState(null);
+  const leftCoverRef = useRef(null);
 
   useEffect(() => {
-    setClassName('turn');
-    const tId = setTimeout(() => {
-      setInitIndex(0);
+    // start left cover with totalPages count + 1 for show it over pages
+    leftCoverRef.current.style.zIndex = totalPages + 1;
+
+    const coverTimeout = setTimeout(() => {
+      leftCoverRef.current.classList.add('turn');
+
+      // change zIndex for showing pages above cover
+      setTimeout(() => {
+        leftCoverRef.current.style.zIndex = 1;
+      }, 500);
     }, coverRotateTimeout);
 
     return () => {
-      clearTimeout(tId);
+      clearTimeout(coverTimeout);
     };
   }, []);
 
   return (
     <>
-      <CoverLeft style={{ zIndex: initIndex }} className={className} />
+      <CoverLeft ref={leftCoverRef}>
+        <CoverContent>
+          <h3>Maksim Makarenko</h3>
+          <h1>Portfolio</h1>
+          <p>2023</p>
+        </CoverContent>
+      </CoverLeft>
       <CoverRight />
     </>
   );

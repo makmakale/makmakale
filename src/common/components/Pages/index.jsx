@@ -1,10 +1,10 @@
 import { Page, PagesContainer, PageWrapper } from '@/common/components/Pages/Pages.styled';
-import { bookPages } from '@/common/constants/book';
+import { bookPages, totalPages } from '@/common/constants/book';
 import { usePages } from '@/common/components/Pages/Pages.hooks';
 import PageNavigation from '@/common/components/PageNavigation';
 
 function Pages() {
-  const { handlePrevPage, handleNextPage, lastPage } = usePages();
+  const { handlePrevPage, handleNextPage } = usePages();
 
   return (
     <PagesContainer>
@@ -13,7 +13,7 @@ function Pages() {
           key={`page-${page}`}
           id="page"
           data-page-id={page}
-          style={{ zIndex: bookPages.length - index }}
+          style={{ zIndex: totalPages - index }}
         >
           <PageWrapper className={`${page % 2 === 0 ? 'front' : 'back'}`}>
             {Component ? <Component {...rest} /> : null}
@@ -21,7 +21,6 @@ function Pages() {
 
           <PageNavigation
             currentPage={page}
-            lastPage={lastPage}
             handlePrevPage={handlePrevPage}
             handleNextPage={handleNextPage}
           />

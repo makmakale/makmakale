@@ -19,6 +19,9 @@ const pages = [
 
 export const bookPages = pages.map((page, index) => ({ ...page, page: index + 1 }));
 
+export const totalPages = bookPages.length;
+export const lastPageNavigation = totalPages % 2 === 0 ? totalPages + 1 : totalPages;
+
 export const initialPage = 1;
 
 export const pagesOnScreen = 2;

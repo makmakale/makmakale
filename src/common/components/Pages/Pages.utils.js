@@ -1,3 +1,7 @@
+import {
+  initialPage, lastPageNavigation, pagesOnScreen, totalPages,
+} from '@/common/constants/book';
+
 const getSearchPages = (pages, pageNumber, currentPage) => {
   let searchPages = [...pages].filter((_, index) => index % 2 === 0);
 
@@ -45,12 +49,42 @@ export function animatePages(pageNumber, currentPage) {
           naiborPage.classList.add('turn');
         }
         setTimeout(() => {
-          page.style.zIndex = pages.length + pageId - 1;
+          page.style.zIndex = pages.length + pageId - 1 + totalPages;
           if (naiborPage) {
-            naiborPage.style.zIndex = pages.length + pageId;
+            naiborPage.style.zIndex = pages.length + pageId + totalPages;
           }
         }, 500);
       }
     }, (index + 1) * 200 + 100);
   });
+}
+
+export function setPreviousPage(searchParams) {
+  const prevPage = Number(searchParams.get('page'));
+  const nextPage = prevPage - pagesOnScreen < 1 ? 1 : prevPage - pagesOnScreen;
+  animatePages(nextPage, prevPage);
+  searchParams.set('page', nextPage.toString());
+}
+
+export function setNextPage(searchParams) {
+  const prevPage = Number(searchParams.get('page'));
+  const nextPage = prevPage + pagesOnScreen > totalPages ? lastPageNavigation : prevPage + pagesOnScreen;
+  animatePages(nextPage, prevPage);
+  searchParams.set('page', nextPage.toString());
+}
+
+export function setSpecificPage(searchParams, newPageNumber, initPage) {
+  const prevPage = initPage || Number(searchParams.get('page'));
+
+  let nextPage;
+  if (newPageNumber > lastPageNavigation) {
+    nextPage = lastPageNavigation;
+  } else if (newPageNumber < initialPage) {
+    nextPage = initialPage;
+  } else {
+    nextPage = newPageNumber % 2 === 0 ? newPageNumber + 1 : newPageNumber;
+  }
+
+  animatePages(nextPage, prevPage);
+  searchParams.set('page', nextPage.toString());
 }
