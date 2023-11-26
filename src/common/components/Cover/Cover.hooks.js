@@ -17,6 +17,7 @@ export const useCoverHook = (leftCoverRef) => {
       }, coverRotateTimeout - 500);
     }, coverRotateTimeout - 500);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       clearTimeout(coverTimeout);
     };

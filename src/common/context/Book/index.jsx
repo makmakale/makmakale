@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import {
+  createContext, useContext, useMemo, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 
 const BookContext = createContext();
@@ -20,8 +22,10 @@ export function BookProvider({ children }) {
     setBookOpened(true);
   }
 
+  const value = useMemo(() => ({ isBookOpened, openBook }), [isBookOpened]);
+
   return (
-    <BookContext.Provider value={{ isBookOpened, openBook }}>
+    <BookContext.Provider value={value}>
       {children}
     </BookContext.Provider>
   );

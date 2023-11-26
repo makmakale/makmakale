@@ -54,6 +54,7 @@ export const usePages = () => {
 
     document.addEventListener('keyup', handleKeyPress);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       document.removeEventListener('keyup', handleKeyPress);
       clearTimeout(coverTimeout);
