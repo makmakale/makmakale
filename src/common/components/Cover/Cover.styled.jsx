@@ -38,9 +38,11 @@ export const CoverLeft = styled(Cover)`
   z-index: ${totalPages + 1};
   transform: rotateY(180deg);
   transition: transform ${coverRotateTimeout}ms cubic-bezier(.645, .045, .355, 1);
+  cursor: pointer;
 
   &.turn {
     transform: rotateY(0deg);
+    cursor: unset;
 
     ${CoverContent} {
       opacity: 0;

@@ -49,9 +49,9 @@ export function animatePages(pageNumber, currentPage) {
           naiborPage.classList.add('turn');
         }
         setTimeout(() => {
-          page.style.zIndex = pages.length + pageId - 1 + totalPages;
+          page.style.zIndex = pages.length + pageId - 1;
           if (naiborPage) {
-            naiborPage.style.zIndex = pages.length + pageId + totalPages;
+            naiborPage.style.zIndex = pages.length + pageId;
           }
         }, 500);
       }

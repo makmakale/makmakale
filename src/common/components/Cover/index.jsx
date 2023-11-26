@@ -8,20 +8,11 @@ function Cover() {
 
   useCoverHook(leftCoverRef);
 
-      // change zIndex for showing pages above cover
-      setTimeout(() => {
-        leftCoverRef.current.style.zIndex = 1;
-      }, 500);
-    }, coverRotateTimeout);
-
-    return () => {
-      clearTimeout(coverTimeout);
-    };
-  }, []);
+  const { openBook } = useBookContext();
 
   return (
     <>
-      <CoverLeft ref={leftCoverRef}>
+      <CoverLeft ref={leftCoverRef} onClick={openBook}>
         <CoverContent>
           <h3>Maksim Makarenko</h3>
           <h1>Portfolio</h1>
