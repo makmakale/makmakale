@@ -93,7 +93,7 @@ export const ProfileTable = styled.table`
   }
 `;
 
-export const ProfileDownloadCV = styled.div`
+export const ProfileDownloadCV = styled.a`
   position: relative;
   padding: 10px 20px;
   font-family: monospace;
@@ -106,6 +106,7 @@ export const ProfileDownloadCV = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: 500ms;
+  text-decoration: none;
 
   &:hover {
     box-shadow: 0 10px 30px ${(props) => props.theme.primaryColor};
