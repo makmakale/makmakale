@@ -1,8 +1,10 @@
+import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 const PERIOD_WIDTH = 60;
 const PERIOD_HEIGHT = 80;
 const GAP = 10;
+
 export const EduTimeline = styled.ul`
   list-style-type: none;
   display: flex;
@@ -19,6 +21,11 @@ export const EduCard = styled.div`
   justify-content: space-between;
   gap: ${GAP}px;
   overflow: hidden;
+
+  @media screen and (${mobileWidth}) {
+    width: 100%;
+    height: 350px;
+  }
 `;
 
 export const EduCardImage = styled.div`
@@ -49,6 +56,10 @@ export const EduCardImage = styled.div`
   &::after {
     left: 0;
     bottom: ${PERIOD_HEIGHT - GAP}px;
+  }
+
+  @media screen and (${mobileWidth}) {
+    height: 250px;
   }
 `;
 

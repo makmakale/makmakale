@@ -1,3 +1,4 @@
+import { mobileOrTabletWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 const PageBtn = styled.span`
@@ -17,8 +18,14 @@ const PageBtn = styled.span`
   &:hover {
     color: ${({ theme }) => theme.primaryColor};
   }
+
+  @media screen and (${mobileOrTabletWidth}) {
+    display: none;
+  }
 `;
+
 export const PrevPage = styled(PageBtn)`
   transform: rotateY(-180deg);
 `;
+
 export const NextPage = styled(PageBtn)``;

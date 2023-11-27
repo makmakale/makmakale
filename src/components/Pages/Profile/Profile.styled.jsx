@@ -1,3 +1,4 @@
+import { mobileOrTabletWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 export const ProfileImage = styled.div`
@@ -15,6 +16,10 @@ export const ProfileImage = styled.div`
 export const ProfileName = styled.h1`
   font-size: 2.7rem;
   line-height: 1;
+
+  @media screen and (${mobileOrTabletWidth}) {
+    font-size: 2.2rem;
+  }
 `;
 export const ProfileJobTitle = styled.h3`
   font-size: 1.5rem;
@@ -33,6 +38,10 @@ export const ProfileSection = styled.div`
   border: 2px solid ${(props) => props.theme.primaryColor};
   border-radius: .6rem;
   margin-top: 1rem;
+
+  @media screen and (${mobileOrTabletWidth}) {
+    width: 100%;
+  }
 `;
 
 export const ProfileSectionTitle = styled.h3`

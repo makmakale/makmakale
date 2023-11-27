@@ -5,14 +5,20 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background-color: #efd4b9;
     color: #333;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.65px;
+}
+
+body,
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
 }

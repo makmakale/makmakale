@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { coverRotateTimeout, totalPages } from '@/common/constants/book';
+import { mobileOrTabletWidth, mobileWidth } from '@/common/constants/media';
+import styled from 'styled-components';
 
 const Cover = styled.div`
   width: 100%;
@@ -10,6 +11,12 @@ const Cover = styled.div`
   box-shadow: ${({ theme }) => theme.coverShadow};
   display: flex;
   align-items: center;
+
+  @media screen and (${mobileOrTabletWidth}) {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    box-shadow: unset;
+  }
 `;
 
 export const CoverContent = styled.div`
@@ -28,6 +35,10 @@ export const CoverContent = styled.div`
     text-transform: uppercase;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
     line-height: .7em;
+
+    @media screen and (${mobileWidth}) {
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -46,9 +57,23 @@ export const CoverLeft = styled(Cover)`
       opacity: 0;
     }
   }
+
+  @media screen and (${mobileOrTabletWidth}) {
+    position: relative;
+    transform-origin: unset;
+    z-index: unset;
+
+    &.turn {
+      transform: unset;
+    }
+  }
 `;
 
 export const CoverRight = styled(Cover)`
   position: relative;
   z-index: -1;
+
+  @media screen and (${mobileOrTabletWidth}) {
+    display: none;
+  }
 `;
