@@ -1,7 +1,8 @@
+import Education from '@/components/Pages/Education';
+import Experience from '@/components/Pages/Experience';
 import IntroPage from '@/components/Pages/Intro';
 import Profile from '@/components/Pages/Profile';
-import Experience from '@/components/Pages/Experience';
-import Education from '@/components/Pages/Education';
+import Projects from '@/components/Pages/Projects';
 import Skills from '@/components/Pages/Skills';
 
 const pages = [
@@ -15,6 +16,7 @@ const pages = [
   { component: Experience, part: 6 },
   { title: 'Education', component: Education },
   { title: 'Skills', component: Skills },
+  { title: 'Projects', component: Projects },
 ];
 
 export const bookPages = pages.map((page, index) => ({ ...page, page: index + 1 }));
