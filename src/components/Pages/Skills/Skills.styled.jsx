@@ -1,3 +1,4 @@
+import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 export const SkillsSection = styled.div`
@@ -12,6 +13,10 @@ export const SkillsContent = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(120px, 1fr));
   grid-gap: 1rem;
+
+  @media screen and (${mobileWidth}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const SkillsBox = styled.div`

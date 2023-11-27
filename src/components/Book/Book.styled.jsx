@@ -1,3 +1,4 @@
+import { mobileOrTabletWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 export const BookWrapper = styled.div`
@@ -6,4 +7,11 @@ export const BookWrapper = styled.div`
   height: 60rem;
   transition-duration: 1s;
   transform: translateX(${(props) => (props.open ? '20rem' : 0)});
+
+  @media screen and (${mobileOrTabletWidth}) {
+    width: 100%;
+    height: 100%;
+    transition-duration: unset;
+    transform: unset;
+  }
 `;

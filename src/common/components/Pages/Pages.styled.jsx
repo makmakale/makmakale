@@ -1,3 +1,4 @@
+import { mobileOrTabletWidth, mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 export const PagesContainer = styled.div`
@@ -7,6 +8,14 @@ export const PagesContainer = styled.div`
   margin-top: 1.5rem;
   perspective: 300rem;
   z-index: 1;
+
+  @media screen and (${mobileOrTabletWidth}) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    perspective: unset;
+  }
 `;
 
 export const Page = styled.div`
@@ -46,6 +55,51 @@ export const Page = styled.div`
   &.turn {
     transform: rotateY(-180deg);
   }
+
+  @media screen and (${mobileOrTabletWidth}) {
+    position: relative;
+    padding: 2rem;
+    top: unset;
+    right: unset;
+    min-height: 100vh;
+    height: auto;
+    justify-content: flex-start;
+    transform-style: unset;
+    transform-origin: unset;
+    overflow: unset;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &.turn {
+      transform: rotateY(0deg);
+    }
+  }
+
+  @media screen and (${mobileWidth}) {
+    position: relative;
+    padding: 1rem 1.2rem 1.2rem;
+    top: unset;
+    right: unset;
+    min-height: 100vh;
+    height: auto;
+    justify-content: flex-start;
+    transform-style: unset;
+    transform-origin: unset;
+    overflow: unset;
+    margin-bottom: .2rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &.turn {
+      transform: rotateY(0deg);
+    }
+  }
 `;
 
 export const PageWrapper = styled.div`
@@ -61,5 +115,11 @@ export const PageWrapper = styled.div`
 
   &.back {
     transform: rotateY(0deg) translateZ(1px);
+  }
+
+  @media screen and (${mobileOrTabletWidth}) {
+    &.front {
+      transform: rotateY(0deg) translateZ(1px);
+    }
   }
 `;

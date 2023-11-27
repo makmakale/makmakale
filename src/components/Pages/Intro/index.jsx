@@ -11,8 +11,7 @@ function IntroPage() {
       <ul style={{ marginLeft: 20 }}>
         <li>
           You can use <i className="bx bx-left-arrow-alt" /> / <i className="bx bx-right-arrow-alt" /> buttons
-          to
-          navigate between pages.
+          to navigate between pages.
         </li>
         <li>
           You can use <strong>Home / End</strong> key buttons to navigate to the

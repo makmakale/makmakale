@@ -1,4 +1,5 @@
 import PageContent from '@/common/components/PageContent';
+import useDeviceType from '@/common/hooks/useDeviceType';
 import { projects } from '@/components/Pages/Projects/Projects.constants';
 import {
   ProjectCard,
@@ -11,6 +12,8 @@ import {
 import PropTypes from 'prop-types';
 
 function Projects({ title }) {
+  const isMobileOrTablet = useDeviceType();
+
   return (
     <PageContent title={title}>
       <ProjectsContainer>
@@ -26,7 +29,7 @@ function Projects({ title }) {
               </ProjectCardButtonsGroup>
             </ProjectCardContent>
             <ProjectCardImage style={{ backgroundImage: `url(${project.img})` }} />
-            <ProjectCardText><h2>Hover Me</h2></ProjectCardText>
+            <ProjectCardText><h2>{isMobileOrTablet ? 'Click Me' : 'Hover Me'}</h2></ProjectCardText>
           </ProjectCard>
         ))}
       </ProjectsContainer>

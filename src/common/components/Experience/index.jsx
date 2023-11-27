@@ -1,14 +1,31 @@
+import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 export const CompanyHeader = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (${mobileWidth}) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
-export const CompanyLogo = styled.img``;
+
+export const CompanyLogo = styled.img`
+  height: 40px;
+  width: auto;
+
+  @media screen and (${mobileWidth}) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
 export const WorkPeriod = styled.div`
   font-style: italic;
 `;
+
 export const ProjectInfo = styled.div`
   width: 100%;
   display: flex;
@@ -20,7 +37,12 @@ export const ProjectInfo = styled.div`
     flex-direction: column;
     gap: 1rem;
   }
+
+  @media screen and (${mobileWidth}) {
+    flex-direction: column;
+  }
 `;
+
 export const ProjectImage = styled.img`
   margin: 0 auto;
   font-style: italic;
@@ -30,6 +52,10 @@ export const ProjectImage = styled.img`
   vertical-align: middle;
   outline: 1px solid ${({ theme }) => theme.primaryColor};
   border-radius: 10px;
+
+  @media screen and (${mobileWidth}) {
+    max-width: 100%;
+  }
 `;
 
 export const ProjectTable = styled.table`
@@ -59,9 +85,11 @@ export const ProjectTable = styled.table`
     }
   }
 `;
+
 export const ProjectDescription = styled.div`
   text-align: justify;
 `;
+
 export const ProjectResponsibilities = styled.ul`
   list-style-type: square;
   margin-left: 20px;

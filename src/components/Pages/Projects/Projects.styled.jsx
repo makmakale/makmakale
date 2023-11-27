@@ -1,3 +1,4 @@
+import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 const BORDER_SIZE = 8;
@@ -12,6 +13,10 @@ export const ProjectsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+
+  @media screen and (${mobileWidth}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const ProjectCardContent = styled.div`
