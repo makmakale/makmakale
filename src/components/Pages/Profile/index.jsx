@@ -1,15 +1,15 @@
+import photo from '@/assets/images/profile/photo.jpg';
 import PageContent from '@/common/components/PageContent';
+import ProfileAbout from '@/components/Pages/Profile/Profile.About';
+import ProfileContacts from '@/components/Pages/Profile/Profile.Contacts';
+import ProfileDownloadCv from '@/components/Pages/Profile/Profile.DownloadCV';
 import {
   ProfileDescription,
-  ProfileDownloadCV,
   ProfileImage,
   ProfileJobTitle,
   ProfileName,
 } from '@/components/Pages/Profile/Profile.styled';
-import photo from '@/assets/images/profile/photo.jpg';
 import { getExperienceYears } from '@/components/Pages/Profile/Profile.utils';
-import ProfileAbout from '@/components/Pages/Profile/Profile.About';
-import ProfileContacts from '@/components/Pages/Profile/Profile.Contacts';
 
 function ProfilePage() {
   const experience = getExperienceYears();
@@ -32,13 +32,7 @@ function ProfilePage() {
       <ProfileAbout />
       <ProfileContacts />
 
-      <ProfileDownloadCV>
-        <span />
-        <span />
-        <span />
-        <span />
-        Download CV
-      </ProfileDownloadCV>
+      <ProfileDownloadCv />
     </PageContent>
   );
 }
