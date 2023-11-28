@@ -10,14 +10,21 @@ import {
   ProjectsContainer,
 } from '@/components/Pages/Projects/Projects.styled';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
-function Projects({ title }) {
+function Projects({ title, part }) {
   const isMobileOrTablet = useDeviceType();
+  const [slicedProjects, setSlicedProjects] = useState(projects);
+
+  useEffect(() => {
+    const nextPart = part * 4;
+    setSlicedProjects(projects.slice(nextPart - 4, nextPart));
+  }, [part]);
 
   return (
     <PageContent title={title}>
       <ProjectsContainer>
-        {projects.map((project) => (
+        {slicedProjects.map((project) => (
           <ProjectCard key={project.id}>
             <ProjectCardContent>
               <h2>{project.title}</h2>
@@ -39,10 +46,12 @@ function Projects({ title }) {
 
 Projects.propTypes = {
   title: PropTypes.string,
+  part: PropTypes.number,
 };
 
 Projects.defaultProps = {
   title: null,
+  part: 1,
 };
 
 export default Projects;
