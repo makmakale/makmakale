@@ -1,5 +1,5 @@
-import { techs } from '@/common/constants/techs';
 import ProjectStack from '@/common/components/ProjectStack';
+import { techs } from '@/common/constants/techs';
 
 const tools = [
   techs.react,
@@ -12,7 +12,7 @@ const tools = [
 
 function MoomlaTools() {
   return (
-    <ProjectStack tools={tools} showDivider={false} />
+    <ProjectStack tools={tools} />
   );
 }
 

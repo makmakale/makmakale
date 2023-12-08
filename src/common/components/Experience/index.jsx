@@ -24,6 +24,11 @@ export const CompanyLogo = styled.img`
 
 export const WorkPeriod = styled.div`
   font-style: italic;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  position: relative;
+  margin-bottom: auto;
 `;
 
 export const ProjectInfo = styled.div`

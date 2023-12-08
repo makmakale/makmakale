@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const PageBtn = styled.span`
   position: absolute;
-  bottom: .5rem;
-  right: .5rem;
+  bottom: .35rem;
+  right: .35rem;
   width: 2rem;
   height: 2rem;
   cursor: pointer;

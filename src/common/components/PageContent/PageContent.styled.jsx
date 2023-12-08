@@ -12,4 +12,6 @@ export const PageContainer = styled.div`
 `;
 
 export const PageTitle = styled.h1`
+  line-height: 1.8;
+  border-bottom: 1px solid #ccc;
 `;
