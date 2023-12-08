@@ -1,22 +1,22 @@
-import {
-  CompanyHeader,
-  CompanyLogo,
-  ProjectImage,
-  ProjectInfo,
-  SectionTitle,
-  WorkPeriod,
-} from '@/common/components/Experience';
 import zavodLogo from '@/assets/images/companies/zavod.png';
-import MarketerResponsibilities from '@/components/Pages/Experience/Zavod/Marketer.Responsibilities';
-import ManagerResponsibilities from '@/components/Pages/Experience/Zavod/Manager.Responsibilities';
 import pumps from '@/assets/images/projects/nasosy.webp';
+import {
+  CompanyHeader, CompanyLogo, ProjectImage, ProjectInfo, SectionTitle,
+} from '@/common/components/Experience';
+import Period from '@/common/components/Period';
+import MoomlaDescription from '@/components/Pages/Experience/Moomla/Moomla.Description';
+import MoomlaTools from '@/components/Pages/Experience/Moomla/Moomla.Tools';
+import MarketerResponsibilities from '@/components/Pages/Experience/Zavod/Marketer.Responsibilities';
 
-function Part5() {
+function Part6() {
   return (
     <>
+      <MoomlaDescription />
+      <MoomlaTools />
+
       <CompanyHeader>
         <CompanyLogo src={zavodLogo} alt="Zavod Promburvod Logo" height={40} />
-        <WorkPeriod>Apr 2010 - May 2020</WorkPeriod>
+        <Period>Apr 2010 - May 2020</Period>
       </CompanyHeader>
 
       <ProjectInfo>
@@ -29,11 +29,8 @@ function Part5() {
 
       <SectionTitle>Marketer</SectionTitle>
       <MarketerResponsibilities />
-
-      <SectionTitle>Manager</SectionTitle>
-      <ManagerResponsibilities />
     </>
   );
 }
 
-export default Part5;
+export default Part6;

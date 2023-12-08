@@ -1,5 +1,5 @@
-import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
 import moomla from '@/assets/images/projects/moomla.png';
+import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
 import ProjectTable from '@/common/components/ProjectTable';
 
 function MoomlaHeader() {
@@ -8,7 +8,7 @@ function MoomlaHeader() {
       <SectionTitle>Project Info:</SectionTitle>
 
       <ProjectInfo>
-        <ProjectImage src={moomla} alt="Moomla Logo" />
+        <ProjectImage src={moomla} alt="Moomla Logo" width={150} />
 
         <div>
           <ProjectTable

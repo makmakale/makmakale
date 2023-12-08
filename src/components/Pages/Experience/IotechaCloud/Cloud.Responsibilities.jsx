@@ -19,7 +19,6 @@ function CloudResponsibilities() {
         </li>
         <li>development of a search for the filter by nodes with the result output saving hierarchy;</li>
         <li>Error Boundary integration;</li>
-        <li>correcting errors associated with recalculation of plasma nodes caused by the backend;</li>
       </ProjectResponsibilities>
     </>
   );

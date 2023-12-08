@@ -14,8 +14,9 @@ const pages = [
   { component: Experience, part: 4 },
   { component: Experience, part: 5 },
   { component: Experience, part: 6 },
-  { title: 'Education', component: Education },
+  { component: Experience, part: 7 },
   { title: 'Skills', component: Skills },
+  { title: 'Education', component: Education },
   { title: 'Projects', component: Projects },
   { component: Projects, part: 2 },
 ];

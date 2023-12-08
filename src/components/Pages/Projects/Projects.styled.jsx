@@ -2,7 +2,7 @@ import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
 const BORDER_SIZE = 8;
-const LOCK_SIZE = 30;
+const LOCK_SIZE = 40;
 const FIRST_BG_COLOR = '#ff4d4d';
 const SECOND_BG_COLOR = '#3ae374';
 const THIRD_BG_COLOR = '#5fa7ff';
@@ -79,28 +79,16 @@ export const ProjectCardImage = styled(DefaultWrapper)`
   &::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 ${LOCK_SIZE}px ${LOCK_SIZE + 5}px ${LOCK_SIZE}px;
-    border-color: transparent transparent ${({ theme }) => theme.primaryColorDark} transparent;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
     bottom: -${BORDER_SIZE / 2}px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 ${LOCK_SIZE - 6}px ${LOCK_SIZE - 8 + 5}px ${LOCK_SIZE - 6}px;
-    border-color: transparent transparent ${({ theme }) => theme.whiteColor} transparent;
+    width: ${LOCK_SIZE}px;
+    height: ${LOCK_SIZE / 2}px;
+    background: ${({ theme }) => theme.whiteColor};
+    border: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
+    border-bottom: 0;
+    border-top-left-radius: ${LOCK_SIZE}px;
+    border-top-right-radius: ${LOCK_SIZE}px;
     z-index: 1;
   }
 `;
@@ -115,28 +103,16 @@ export const ProjectCardText = styled(DefaultWrapper)`
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: ${LOCK_SIZE + 5}px ${LOCK_SIZE}px 0 ${LOCK_SIZE}px;
-    border-color: ${({ theme }) => theme.primaryColorDark} transparent transparent transparent;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
     top: -${BORDER_SIZE / 2}px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: ${LOCK_SIZE - 8 + 5}px ${LOCK_SIZE - 6}px 0 ${LOCK_SIZE - 6}px;
-    border-color: ${({ theme }) => theme.whiteColor} transparent transparent transparent;
+    width: ${LOCK_SIZE}px;
+    height: ${LOCK_SIZE / 2}px;
+    background: ${({ theme }) => theme.whiteColor};
+    border: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
+    border-top: 0;
+    border-bottom-left-radius: ${LOCK_SIZE}px;
+    border-bottom-right-radius: ${LOCK_SIZE}px;
     z-index: 1;
   }
 

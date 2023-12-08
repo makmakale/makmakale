@@ -1,33 +1,24 @@
-import {
-  CompanyHeader, CompanyLogo, ProjectResponsibilities, WorkPeriod,
-} from '@/common/components/Experience';
 import itechartLogo from '@/assets/images/companies/itechart.png';
+import { CompanyHeader, CompanyLogo } from '@/common/components/Experience';
+import Period from '@/common/components/Period';
 import FoxhuntHeader from '@/components/Pages/Experience/iTechArt/Foxhunt.Header';
 import FoxhuntResponsibilities from '@/components/Pages/Experience/iTechArt/Foxhunt.Responsibilities';
+import KlikaResponsibilities from '@/components/Pages/Experience/KlikaInternal/Klika.Responsibilities';
 import KlikaTools from '@/components/Pages/Experience/KlikaInternal/Klika.Tools';
-import Divider from '@/common/components/Divider';
-import CargoHeader from '@/components/Pages/Experience/iTechArt/Cargo.Header';
 
 function Part4() {
   return (
     <>
-      <ProjectResponsibilities>
-        <li>support/adding adaptability;</li>
-        <li>content manager.</li>
-      </ProjectResponsibilities>
+      <KlikaResponsibilities />
       <KlikaTools />
 
       <CompanyHeader>
         <CompanyLogo src={itechartLogo} alt="iTechArt Group Logo" height={40} />
-        <WorkPeriod>Dec 2020 - Jun 2021</WorkPeriod>
+        <Period>Dec 2020 - Jun 2021</Period>
       </CompanyHeader>
 
       <FoxhuntHeader />
       <FoxhuntResponsibilities />
-
-      <Divider />
-
-      <CargoHeader />
     </>
   );
 }
