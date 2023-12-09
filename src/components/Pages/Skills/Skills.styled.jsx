@@ -11,7 +11,7 @@ export const SkillsSection = styled.div`
 `;
 export const SkillsContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(${(props) => props.columns || 4}, minmax(120px, 1fr));
   grid-gap: 1rem;
 
   @media screen and (${mobileWidth}) {
@@ -73,6 +73,10 @@ export const SkillsBox = styled.div`
 
     &.bxl-mongodb {
       color: #2aa855;
+    }
+
+    &.bxl-sass {
+      color: #cb6999;
     }
   }
 
