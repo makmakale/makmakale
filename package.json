@@ -1,7 +1,17 @@
 {
   "name": "portfolio",
+  "description": "Maksim Makarenko - Frontend Developer portfolio.",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "keywords": [
+    "portfolio",
+    "react developer",
+    "frontend developer",
+    "javascript developer",
+    "software engineer",
+    "Minska, Belarus"
+  ],
+  "author": "Maksim Makarenko",
   "type": "module",
   "scripts": {
     "dev": "vite",

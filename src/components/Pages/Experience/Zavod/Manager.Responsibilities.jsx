@@ -3,7 +3,7 @@ import { ProjectResponsibilities, SectionTitle } from '@/common/components/Exper
 function ManagerResponsibilities() {
   return (
     <>
-      <SectionTitle>Responsibilities:</SectionTitle>
+      <SectionTitle>Manager Responsibilities:</SectionTitle>
       <ProjectResponsibilities>
         <li>sales;</li>
         <li>issuing invoices;</li>

@@ -104,3 +104,24 @@ export const ProjectResponsibilities = styled.ul`
 export const SectionTitle = styled.h4`
   text-transform: uppercase;
 `;
+
+export const ReferencesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  p {
+    margin-bottom: .3rem;
+  }
+`;
+
+export const ReferenceName = styled.p`
+  font-weight: 600;
+  font-size: 1.125rem;
+`;
+
+export const ReferenceTitle = styled.p`
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: underline;
+`;

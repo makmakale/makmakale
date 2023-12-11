@@ -1,12 +1,22 @@
+import itechartLogo from '@/assets/images/companies/itechart.png';
+import { CompanyHeader, CompanyLogo } from '@/common/components/Experience';
+import Period from '@/common/components/Period';
 import ProjectDescription from '@/common/components/ProjectDescription';
 import CargoHeader from '@/components/Pages/Experience/iTechArt/Cargo.Header';
 import CargoResponsibilities from '@/components/Pages/Experience/iTechArt/Cargo.Responsibilities';
-import ItechartTools from '@/components/Pages/Experience/iTechArt/Itechart.Tools';
-import MoomlaHeader from '@/components/Pages/Experience/Moomla/Moomla.Header';
+import FoxhuntHeader from '@/components/Pages/Experience/iTechArt/Foxhunt.Header';
+import FoxhuntResponsibilities from '@/components/Pages/Experience/iTechArt/Foxhunt.Responsibilities';
 
 function Part5() {
   return (
     <>
+      <CompanyHeader>
+        <CompanyLogo src={itechartLogo} alt="iTechArt Group Logo" height={40} />
+        <Period>Dec 2020 - Jun 2021</Period>
+      </CompanyHeader>
+
+      <FoxhuntHeader />
+      <FoxhuntResponsibilities />
       <CargoHeader />
 
       <ProjectDescription>
@@ -17,9 +27,6 @@ function Part5() {
         </p>
       </ProjectDescription>
       <CargoResponsibilities />
-      <ItechartTools />
-
-      <MoomlaHeader />
     </>
   );
 }
