@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
-import { useBookContext } from '@/common/context/Book';
 import { coverRotateTimeout } from '@/common/constants/book';
+import { useBookContext } from '@/common/context/Book';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const useCoverHook = (leftCoverRef) => {
-  const { isBookOpened } = useBookContext();
+  const { isBookOpened, openBook } = useBookContext();
+  const [searchParams] = useSearchParams();
+  const activePage = Number(searchParams.get('page'));
 
   useEffect(() => {
     if (!isBookOpened) return;
@@ -22,4 +25,17 @@ export const useCoverHook = (leftCoverRef) => {
       clearTimeout(coverTimeout);
     };
   }, [isBookOpened]);
+
+  useEffect(() => {
+    let openBookIntervalId = null;
+    if (activePage > 1 && !isBookOpened) {
+      openBookIntervalId = setInterval(() => {
+        openBook();
+      }, 800);
+    }
+
+    return () => {
+      clearTimeout(openBookIntervalId);
+    };
+  }, [activePage, isBookOpened]);
 };
