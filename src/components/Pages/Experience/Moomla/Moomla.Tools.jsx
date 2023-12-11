@@ -8,11 +8,12 @@ const tools = [
   techs.express,
   techs.handlebars,
   techs.mongo,
+  techs.expressSession,
 ];
 
 function MoomlaTools() {
   return (
-    <ProjectStack tools={tools} />
+    <ProjectStack tools={tools} showDivider={false} />
   );
 }
 

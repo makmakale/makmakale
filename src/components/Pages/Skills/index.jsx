@@ -29,7 +29,7 @@ function Skills({ title }) {
           <h2>Backend</h2>
           <SkillsContent className="content" columns={2}>
             <SkillsBox><i className="bx bxl-nodejs" />node</SkillsBox>
-            <SkillsBox><i className="bx bxl-php" />symfony</SkillsBox>
+            {/* <SkillsBox><i className="bx bxl-php" />symfony</SkillsBox> */}
           </SkillsContent>
         </SkillsSection>
 

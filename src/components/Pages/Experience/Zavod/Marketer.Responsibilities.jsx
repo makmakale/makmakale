@@ -3,11 +3,10 @@ import { ProjectResponsibilities, SectionTitle } from '@/common/components/Exper
 function MarketerResponsibilities() {
   return (
     <>
-      <SectionTitle>Responsibilities:</SectionTitle>
+      <SectionTitle>Marketer Responsibilities:</SectionTitle>
       <ProjectResponsibilities>
         <li>development of promotional products (booklets, tech catalogs, newspaper modules etc);</li>
-        <li>advertising;</li>
-        <li>supporting new version of website;</li>
+        <li>advertising/promotion;</li>
         <li>development of online shop;</li>
         <li>1C Enterprise 8 development;</li>
         <li>manager responsibilities.</li>

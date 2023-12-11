@@ -19,4 +19,5 @@ export const techs = {
   bootstrap: 'Bootstrap',
   mongo: 'MongoDB/mongoose',
   express: 'Express',
+  expressSession: 'Express Session',
 };
