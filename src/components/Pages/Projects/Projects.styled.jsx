@@ -1,8 +1,6 @@
 import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
-const BORDER_SIZE = 8;
-const LOCK_SIZE = 40;
 const FIRST_BG_COLOR = '#ff4d4d';
 const SECOND_BG_COLOR = '#3ae374';
 const THIRD_BG_COLOR = '#5fa7ff';
@@ -21,27 +19,16 @@ export const ProjectsContainer = styled.div`
 
 export const ProjectCardContent = styled.div`
   position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 25px;
-  gap: 10px;
-  transition: .5s;
-  transition-delay: 0s;
-  opacity: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
 
-  h2 {
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: .1em;
-  }
-
-  p {
-    text-align: center;
-    color: #ffffff;
-  }
+export const ProjectCardContentDetails = styled.div`
+  padding: 2rem;
+  text-align: center;
+  color: #ffffff;
+  transform: translateY(150px);
 `;
 
 export const ProjectCardButtonsGroup = styled.div`
@@ -60,71 +47,85 @@ export const ProjectCardButtonsGroup = styled.div`
   }
 `;
 
-const DefaultWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 500ms;
-`;
-
-export const ProjectCardImage = styled(DefaultWrapper)`
-  background: #ffffff no-repeat center center;
-  background-size: cover;
-  height: 55%;
-  z-index: 1;
-  transform-origin: bottom;
+export const ProjectCardImage = styled.div`
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 150px;
+  background: #000;
+  z-index: 10;
+  overflow: hidden;
 
   &::before {
-    content: '';
     position: absolute;
-    bottom: -${BORDER_SIZE / 2}px;
+    content: '';
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: ${LOCK_SIZE}px;
-    height: ${LOCK_SIZE / 2}px;
-    background: ${({ theme }) => theme.whiteColor};
-    border: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
-    border-bottom: 0;
-    border-top-left-radius: ${LOCK_SIZE}px;
-    border-top-right-radius: ${LOCK_SIZE}px;
+    width: 500px;
+    height: 150px;
+    background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    animation: animateCardImageLines 6s linear infinite;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    inset: 3px;
+    background: #292929;
+  }
+
+  img {
+    position: absolute;
     z-index: 1;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
+
+  @keyframes animateCardImageLines {
+    0% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
   }
 `;
 
-export const ProjectCardText = styled(DefaultWrapper)`
-  height: 45%;
-  border-top: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
-  transform-origin: top;
-  transition-delay: .5s;
-  align-items: flex-end;
+export const ProjectLines = styled.div`
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
 
   &::before {
-    content: '';
     position: absolute;
-    top: -${BORDER_SIZE / 2}px;
+    content: '';
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: ${LOCK_SIZE}px;
-    height: ${LOCK_SIZE / 2}px;
-    background: ${({ theme }) => theme.whiteColor};
-    border: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
-    border-top: 0;
-    border-bottom-left-radius: ${LOCK_SIZE}px;
-    border-bottom-right-radius: ${LOCK_SIZE}px;
-    z-index: 1;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+    animation: animateCardLines 4s linear infinite;
   }
 
-  h2 {
-    color: #222;
-    font-size: 1.25em;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 5px 25px;
-    box-shadow: 0 0 0 ${BORDER_SIZE}px ${({ theme }) => theme.primaryColorDark};
+  &::after {
+    position: absolute;
+    content: '';
+    inset: 3px;
+    background: #292929;
+  }
+
+  @keyframes animateCardLines {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
   }
 `;
 
@@ -132,21 +133,12 @@ export const ProjectCard = styled.div`
   position: relative;
   width: 100%;
   height: 380px;
-  border: ${BORDER_SIZE}px solid ${({ theme }) => theme.primaryColorDark};
   background: ${({ theme }) => theme.primaryColorDark};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
+  transition: .5s;
 
   &:nth-child(1) {
-    ${ProjectCardText} {
-      background: ${FIRST_BG_COLOR};
-    }
-
     ${ProjectCardContent} {
-      h2 {
+      h3 {
         color: ${FIRST_BG_COLOR};
       }
     }
@@ -159,12 +151,15 @@ export const ProjectCard = styled.div`
   }
 
   &:nth-child(2) {
-    ${ProjectCardText} {
-      background: ${SECOND_BG_COLOR};
+    ${ProjectLines},
+    ${ProjectCardImage} {
+      &::before {
+        animation-delay: .5s;
+      }
     }
 
     ${ProjectCardContent} {
-      h2 {
+      h3 {
         color: ${SECOND_BG_COLOR};
       }
     }
@@ -177,12 +172,15 @@ export const ProjectCard = styled.div`
   }
 
   &:nth-child(3) {
-    ${ProjectCardText} {
-      background: ${THIRD_BG_COLOR};
+    ${ProjectLines},
+    ${ProjectCardImage} {
+      &::before {
+        animation-delay: 1s;
+      }
     }
 
     ${ProjectCardContent} {
-      h2 {
+      h3 {
         color: ${THIRD_BG_COLOR};
       }
     }
@@ -195,12 +193,15 @@ export const ProjectCard = styled.div`
   }
 
   &:nth-child(4) {
-    ${ProjectCardText} {
-      background: ${FORTH_BG_COLOR};
+    ${ProjectLines},
+    ${ProjectCardImage} {
+      &::before {
+        animation-delay: 1.5s;
+      }
     }
 
     ${ProjectCardContent} {
-      h2 {
+      h3 {
         color: ${FORTH_BG_COLOR};
       }
     }
@@ -209,21 +210,6 @@ export const ProjectCard = styled.div`
       a {
         background: ${FORTH_BG_COLOR};
       }
-    }
-  }
-
-  &:hover {
-    ${ProjectCardImage} {
-      transform: translateY(-100%) rotateX(90deg);
-    }
-
-    ${ProjectCardText} {
-      transform: translateY(100%) rotateX(90deg);
-    }
-
-    ${ProjectCardContent} {
-      opacity: 1;
-      transition-delay: .5s;
     }
   }
 `;

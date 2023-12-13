@@ -1,19 +1,18 @@
 import PageContent from '@/common/components/PageContent';
-import useDeviceType from '@/common/hooks/useDeviceType';
 import { projects } from '@/components/Pages/Projects/Projects.constants';
 import {
   ProjectCard,
   ProjectCardButtonsGroup,
   ProjectCardContent,
+  ProjectCardContentDetails,
   ProjectCardImage,
-  ProjectCardText,
+  ProjectLines,
   ProjectsContainer,
 } from '@/components/Pages/Projects/Projects.styled';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 function Projects({ title, part }) {
-  const isMobileOrTablet = useDeviceType();
   const [slicedProjects, setSlicedProjects] = useState(projects);
 
   useEffect(() => {
@@ -26,17 +25,23 @@ function Projects({ title, part }) {
       <ProjectsContainer>
         {slicedProjects.map((project) => (
           <ProjectCard key={project.id}>
+            <ProjectLines />
+
+            <ProjectCardImage>
+              <img src={project.img} alt={project.title} />
+            </ProjectCardImage>
+
             <ProjectCardContent>
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <ProjectCardButtonsGroup>
-                {project.viewLink
-                  ? <a href={project.viewLink} target="_blank" rel="noreferrer">View</a> : null}
-                <a href={project.sourceLink} target="_blank" rel="noreferrer">Source</a>
-              </ProjectCardButtonsGroup>
+              <ProjectCardContentDetails>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <ProjectCardButtonsGroup>
+                  {project.viewLink
+                    ? <a href={project.viewLink} target="_blank" rel="noreferrer">View</a> : null}
+                  <a href={project.sourceLink} target="_blank" rel="noreferrer">Source</a>
+                </ProjectCardButtonsGroup>
+              </ProjectCardContentDetails>
             </ProjectCardContent>
-            <ProjectCardImage style={{ backgroundImage: `url(${project.img})` }} />
-            <ProjectCardText><h2>{isMobileOrTablet ? 'Click Me' : 'Hover Me'}</h2></ProjectCardText>
           </ProjectCard>
         ))}
       </ProjectsContainer>
