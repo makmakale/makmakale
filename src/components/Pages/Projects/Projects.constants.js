@@ -1,6 +1,7 @@
 import calcImage from '@/assets/images/my-projects/calculator-small.jpg';
 import countdownImage from '@/assets/images/my-projects/countdown-small.jpg';
 import portfolioImage from '@/assets/images/my-projects/portfolio-small.jpg';
+import tetrisImage from '@/assets/images/my-projects/tetris-small.jpg';
 import todoImage from '@/assets/images/my-projects/todo-small.jpg';
 import jslabImage from '@/assets/images/projects/cargo-trans.png';
 import moomlaImage from '@/assets/images/projects/moomla.png';
@@ -11,6 +12,13 @@ const projectsSetup = [
     img: portfolioImage,
     description: 'You are currently in. But you can view source code by the link below.',
     sourceLink: 'https://github.com/makmakale/portfolio',
+  },
+  {
+    title: 'Tetris',
+    img: tetrisImage,
+    description: 'Tetris game in classic mode where I first tried Redux toolkit.',
+    viewLink: 'https://makmakale.github.io/tetris/',
+    sourceLink: 'https://github.com/makmakale/tetris',
   },
   {
     title: 'ToDo Board',
@@ -43,7 +51,7 @@ const projectsSetup = [
     title: 'CargoTrans',
     img: jslabImage,
     description: 'Mobile app for drivers. Allows view waybills, create routes on the map, check on points and make'
-        + ' reports for broken/stolen goods.',
+      + ' reports for broken/stolen goods.',
     sourceLink: 'https://github.com/makmakale/jslabproject',
   },
 ];
