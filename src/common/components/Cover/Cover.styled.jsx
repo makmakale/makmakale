@@ -6,6 +6,7 @@ const Cover = styled.div`
   width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.cover};
+  color: ${({ theme }) => theme.whiteColor};
   border-top-right-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
   box-shadow: ${({ theme }) => theme.coverShadow};
@@ -30,11 +31,12 @@ export const CoverContent = styled.div`
   transition: opacity ${coverRotateTimeout / 2}ms;
 
   h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: .5rem;
     text-transform: uppercase;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
     line-height: .7em;
+    text-shadow: 5px 5px 10px #000;
 
     @media screen and (${mobileWidth}) {
       font-size: 3rem;

@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { coverRotateTimeout, initialPage, lastPageNavigation } from '@/common/constants/book';
 import { setNextPage, setPreviousPage, setSpecificPage } from '@/common/components/Pages/Pages.utils';
-import { useSearchParams } from 'react-router-dom';
+import { coverRotateTimeout, initialPage, lastPageNavigation } from '@/common/constants/book';
 import { useBookContext } from '@/common/context/Book';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const usePages = () => {
   const [searchParams, setSearchParams] = useSearchParams({ page: initialPage.toString() });
@@ -46,7 +46,7 @@ export const usePages = () => {
       } else if (e.code === 'ArrowRight') {
         handleNextPage();
       } else if (e.code === 'Home') {
-        moveToPage(initialPage);
+        moveToPage(3);
       } else if (e.code === 'End') {
         moveToPage(lastPageNavigation);
       }

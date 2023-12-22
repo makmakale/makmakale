@@ -14,7 +14,7 @@ const tools = [
 
 function KlikaTools() {
   return (
-    <ProjectStack tools={tools} showDivider={false} />
+    <ProjectStack tools={tools} />
   );
 }
 

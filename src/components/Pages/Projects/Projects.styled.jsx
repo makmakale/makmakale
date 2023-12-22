@@ -18,17 +18,16 @@ export const ProjectsContainer = styled.div`
 `;
 
 export const ProjectCardContent = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  flex-grow: 1;
   overflow: hidden;
+  z-index: 1;
 `;
 
 export const ProjectCardContentDetails = styled.div`
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   color: #ffffff;
-  transform: translateY(150px);
+  height: 100%;
 `;
 
 export const ProjectCardButtonsGroup = styled.div`
@@ -48,15 +47,21 @@ export const ProjectCardButtonsGroup = styled.div`
 `;
 
 export const ProjectCardImage = styled.div`
-  position: absolute;
+  position: relative;
   top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 200px;
   height: 150px;
+  padding: 10px;
   background: #000;
-  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+
+  @media screen and (${mobileWidth}) {
+    width: 250px;
+    height: 200px;
+  }
 
   &::before {
     position: absolute;
@@ -77,12 +82,9 @@ export const ProjectCardImage = styled.div`
   }
 
   img {
-    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
     z-index: 1;
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
   }
 
   @keyframes animateCardImageLines {
@@ -116,7 +118,7 @@ export const ProjectLines = styled.div`
     position: absolute;
     content: '';
     inset: 3px;
-    background: #292929;
+    background: ${({ theme }) => theme.projectBg};
   }
 
   @keyframes animateCardLines {
@@ -132,9 +134,14 @@ export const ProjectLines = styled.div`
 export const ProjectCard = styled.div`
   position: relative;
   width: 100%;
-  height: 380px;
+  min-height: 380px;
   background: ${({ theme }) => theme.primaryColorDark};
   transition: .5s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 
   &:nth-child(1) {
     ${ProjectCardContent} {
