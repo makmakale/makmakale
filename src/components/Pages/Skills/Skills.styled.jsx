@@ -9,6 +9,16 @@ export const SkillsSection = styled.div`
     margin-bottom: .5rem;
   }
 `;
+
+export const SkillsBackEndSection = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media screen and (${mobileWidth}) {
+    flex-direction: column;
+  }
+`;
+
 export const SkillsContent = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns || 4}, minmax(120px, 1fr));

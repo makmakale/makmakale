@@ -110,8 +110,31 @@ export const ReferencesGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 
+  @media screen and (${mobileWidth}) {
+    grid-template-columns: 1fr;
+    place-items: center;
+
+    > div {
+      text-align: center;
+    }
+  }
+
   p {
     margin-bottom: .3rem;
+  }
+
+  a,
+  a:focus,
+  a:visited,
+  a:active {
+    color: ${({ theme }) => theme.primaryColor};
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: .5s;
+
+    &:hover {
+      text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    }
   }
 `;
 

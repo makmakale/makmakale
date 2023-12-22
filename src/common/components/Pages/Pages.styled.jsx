@@ -61,7 +61,6 @@ export const Page = styled.div`
     padding: 2rem;
     top: unset;
     right: unset;
-    min-height: 100vh;
     height: auto;
     justify-content: flex-start;
     transform-style: unset;

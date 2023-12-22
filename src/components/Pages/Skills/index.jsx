@@ -2,7 +2,9 @@ import echartsIcon from '@/assets/images/skills/echarts.png';
 import muiIcon from '@/assets/images/skills/material-ui.png';
 import mobxIcon from '@/assets/images/skills/mobx.svg';
 import PageContent from '@/common/components/PageContent';
-import { SkillsBox, SkillsContent, SkillsSection } from '@/components/Pages/Skills/Skills.styled';
+import {
+  SkillsBackEndSection, SkillsBox, SkillsContent, SkillsSection,
+} from '@/components/Pages/Skills/Skills.styled';
 import PropTypes from 'prop-types';
 
 function Skills({ title }) {
@@ -24,12 +26,11 @@ function Skills({ title }) {
         </SkillsContent>
       </SkillsSection>
 
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <SkillsBackEndSection>
         <SkillsSection>
           <h2>Backend</h2>
           <SkillsContent className="content" columns={2}>
             <SkillsBox><i className="bx bxl-nodejs" />node</SkillsBox>
-            {/* <SkillsBox><i className="bx bxl-php" />symfony</SkillsBox> */}
           </SkillsContent>
         </SkillsSection>
 
@@ -40,7 +41,7 @@ function Skills({ title }) {
             <SkillsBox><i className="bx bxl-mongodb" />mongodb</SkillsBox>
           </SkillsContent>
         </SkillsSection>
-      </div>
+      </SkillsBackEndSection>
     </PageContent>
   );
 }
