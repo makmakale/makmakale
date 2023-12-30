@@ -13,5 +13,6 @@ export const BookWrapper = styled.div`
     height: 100%;
     transition-duration: unset;
     transform: unset;
+    overflow-x: hidden;
   }
 `;

@@ -93,6 +93,10 @@ export const ProjectTable = styled.table`
 
 export const ProjectDescription = styled.div`
   text-align: justify;
+
+  p {
+    margin-bottom: .5rem;
+  }
 `;
 
 export const ProjectResponsibilities = styled.ul`

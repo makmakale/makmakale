@@ -20,12 +20,13 @@ export const SkillsBackEndSection = styled.div`
 `;
 
 export const SkillsContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(${(props) => props.columns || 4}, minmax(120px, 1fr));
-  grid-gap: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
 
-  @media screen and (${mobileWidth}) {
-    grid-template-columns: repeat(2, 1fr);
+  > div {
+    flex-grow: 1;
+    flex-basis: 120px;
   }
 `;
 
@@ -36,10 +37,11 @@ export const SkillsBox = styled.div`
   flex-direction: column;
   border-radius: 5px;
   border: 2px solid ${({ theme }) => theme.primaryColor};
-  padding: .8rem;
+  padding: .7rem;
   text-transform: uppercase;
   font-weight: 600;
-  gap: .5rem;
+  gap: .45rem;
+  text-align: center;
 
   i {
     font-size: 4rem;
