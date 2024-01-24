@@ -37,8 +37,14 @@ function Projects({ title, part }) {
                 <p>{project.description}</p>
                 <ProjectCardButtonsGroup>
                   {project.viewLink
-                    ? <a href={project.viewLink} target="_blank" rel="noreferrer">View</a> : null}
-                  <a href={project.sourceLink} target="_blank" rel="noreferrer">Source</a>
+                    ? (
+                      <a href={project.viewLink} target="_blank" rel="noreferrer">
+                        <i className="bx bx-link" /> View App
+                      </a>
+                    ) : null}
+                  <a href={project.sourceLink} target="_blank" rel="noreferrer">
+                    <i className="bx bxl-github" /> Source Code
+                  </a>
                 </ProjectCardButtonsGroup>
               </ProjectCardContentDetails>
             </ProjectCardContent>

@@ -33,7 +33,7 @@ export const ProjectCardContentDetails = styled.div`
 export const ProjectCardButtonsGroup = styled.div`
   margin-top: 10px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   gap: 1rem;
 
   a {
@@ -43,6 +43,7 @@ export const ProjectCardButtonsGroup = styled.div`
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: .1em;
+    text-shadow: 1px 1px 2px black;
   }
 `;
 

@@ -21,27 +21,6 @@ const projectsSetup = [
     sourceLink: 'https://github.com/makmakale/tetris',
   },
   {
-    title: 'ToDo Board',
-    img: todoImage,
-    description: 'To Do list but in Jira style with D&D.',
-    viewLink: 'https://makmakale.github.io/todo-board/',
-    sourceLink: 'https://github.com/makmakale/todo-board',
-  },
-  {
-    title: 'Ney Year Countdown',
-    img: countdownImage,
-    description: 'Simple countdown to New Year.',
-    viewLink: 'https://makmakale.github.io/ny-countdown/',
-    sourceLink: 'https://github.com/makmakale/ny-countdown',
-  },
-  {
-    title: 'Calculator',
-    img: calcImage,
-    description: 'Simple calculator based on Windows calculator but with basic actions (old version).',
-    viewLink: 'https://makmakale.github.io/calculator/',
-    sourceLink: 'https://github.com/makmakale/calculator',
-  },
-  {
     title: 'Moomla',
     img: moomlaImage,
     description: 'E-Commerce with admin panel based on Joomla + JoomShopping (old version).',
@@ -53,6 +32,27 @@ const projectsSetup = [
     description: 'Mobile app for drivers. Allows view waybills, create routes on the map, check on points and make'
       + ' reports for broken/stolen goods.',
     sourceLink: 'https://github.com/makmakale/jslabproject',
+  },
+  {
+    title: 'ToDo Board',
+    img: todoImage,
+    description: 'To Do list but in Jira style with D&D (No Backend yet).',
+    viewLink: 'https://makmakale.github.io/todo-board/',
+    sourceLink: 'https://github.com/makmakale/todo-board',
+  },
+  {
+    title: 'Calculator',
+    img: calcImage,
+    description: 'Simple calculator based on Windows calculator but with basic actions (old version).',
+    viewLink: 'https://makmakale.github.io/calculator/',
+    sourceLink: 'https://github.com/makmakale/calculator',
+  },
+  {
+    title: 'Ney Year Countdown',
+    img: countdownImage,
+    description: 'Simple countdown to New Year.',
+    viewLink: 'https://makmakale.github.io/ny-countdown/',
+    sourceLink: 'https://github.com/makmakale/ny-countdown',
   },
 ];
 
