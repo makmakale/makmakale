@@ -36,7 +36,7 @@ function Skills({ title }) {
         <SkillsSection>
           <h2>Backend</h2>
           <SkillsContent className="content">
-            <SkillsBox><i className="bx bxl-nodejs" />node / express</SkillsBox>
+            <SkillsBox><i className="bx bxl-nodejs" />node /<br /> express</SkillsBox>
           </SkillsContent>
         </SkillsSection>
 

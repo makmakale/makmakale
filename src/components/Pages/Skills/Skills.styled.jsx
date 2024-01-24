@@ -44,7 +44,7 @@ export const SkillsBox = styled.div`
   text-align: center;
 
   i {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: ${({ theme }) => theme.primaryColor};
 
     &.bxl-html5 {
@@ -93,7 +93,7 @@ export const SkillsBox = styled.div`
   }
 
   img {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
   }
 `;
