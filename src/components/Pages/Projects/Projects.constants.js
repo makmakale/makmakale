@@ -2,7 +2,7 @@ import calcImage from '@/assets/images/my-projects/calculator-small.jpg';
 import countdownImage from '@/assets/images/my-projects/countdown-small.jpg';
 import portfolioImage from '@/assets/images/my-projects/portfolio-small.jpg';
 import tetrisImage from '@/assets/images/my-projects/tetris-small.jpg';
-import todoImage from '@/assets/images/my-projects/todo-small.jpg';
+// import todoImage from '@/assets/images/my-projects/todo-small.jpg';
 import jslabImage from '@/assets/images/projects/cargo-trans.png';
 import moomlaImage from '@/assets/images/projects/moomla.png';
 
@@ -33,13 +33,13 @@ const projectsSetup = [
       + ' reports for broken/stolen goods.',
     sourceLink: 'https://github.com/makmakale/jslabproject',
   },
-  {
-    title: 'ToDo Board',
-    img: todoImage,
-    description: 'To Do list but in Jira style with D&D (No Backend yet).',
-    viewLink: 'https://makmakale.github.io/todo-board/',
-    sourceLink: 'https://github.com/makmakale/todo-board',
-  },
+  // {
+  //   title: 'ToDo Board',
+  //   img: todoImage,
+  //   description: 'To Do list but in Jira style with D&D (No Backend yet).',
+  //   viewLink: 'https://makmakale.github.io/todo-board/',
+  //   sourceLink: 'https://github.com/makmakale/todo-board',
+  // },
   {
     title: 'Calculator',
     img: calcImage,
