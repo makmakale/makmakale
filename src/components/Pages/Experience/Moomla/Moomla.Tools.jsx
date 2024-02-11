@@ -9,6 +9,7 @@ const tools = [
   techs.handlebars,
   techs.mongo,
   techs.expressSession,
+  techs.ckeditor,
 ];
 
 function MoomlaTools() {

@@ -20,4 +20,6 @@ export const techs = {
   mongo: 'MongoDB/mongoose',
   express: 'Express',
   expressSession: 'Express Session',
+  scss: 'SCSS',
+  ckeditor: 'CKEditor',
 };

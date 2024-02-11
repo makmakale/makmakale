@@ -6,7 +6,7 @@ export const Chip = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
+  height: 28px;
   color: white;
   background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 16px;

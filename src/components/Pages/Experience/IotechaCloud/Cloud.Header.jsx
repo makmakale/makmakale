@@ -1,20 +1,28 @@
-import cloud from '@/assets/images/projects/IoT.ON.jpg';
-import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
+import { ProjectInfo } from '@/common/components/Experience';
 import ProjectTable from '@/common/components/ProjectTable';
 
 function CloudHeader() {
   return (
     <>
-      <SectionTitle>Project Info:</SectionTitle>
+      <h2 align="center">IoT.ON™ Cloud Platform</h2>
 
       <ProjectInfo>
-        <ProjectImage src={cloud} alt="IoT.ON™ Cloud Platform" />
-
         <ProjectTable
-          project="IoT.ON™ Cloud Platform"
           title="Frontend Developer"
-          team="PM, BA, 2 - FE, 4 - BE, 2 - QA"
-          stack="Frontend - React, backend - Java"
+          team={(
+            <div>
+              <div>Project Manager, Business Analyst</div>
+              <div>2 - Front-end developers</div>
+              <div>4 - Back-end developers</div>
+              <div>2 - QA Engineer</div>
+            </div>
+          )}
+          stack={(
+            <div>
+              <div>Front-end - React, Redux</div>
+              <div>Back-end - Java/AWS</div>
+            </div>
+          )}
         />
       </ProjectInfo>
     </>

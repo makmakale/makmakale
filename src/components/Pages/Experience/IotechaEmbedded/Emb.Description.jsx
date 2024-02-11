@@ -1,8 +1,11 @@
+import embedded from '@/assets/images/projects/Embedded-Software.jpg';
+import { ProjectImage2 } from '@/common/components/Experience';
 import ProjectDescription from '@/common/components/ProjectDescription';
 
 function EmbDescription() {
   return (
     <ProjectDescription>
+      <ProjectImage2 src={embedded} alt="IoT.ON™ Embedded Software" />
       <p>
         IoTecha’s team has deep expertise in the design and implementation of software based
         Media Access Control (MAC) engines, Real Time Operating Systems (RTOS), Embedded Linux

@@ -1,20 +1,29 @@
-import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
-import embedded from '@/assets/images/projects/Embedded-Software.jpg';
+import { ProjectInfo } from '@/common/components/Experience';
 import ProjectTable from '@/common/components/ProjectTable';
 
 function EmbHeader() {
   return (
     <>
-      <SectionTitle>Project Info:</SectionTitle>
+      <h2 align="center">IoT.ON™ Embedded Software</h2>
 
       <ProjectInfo>
-        <ProjectImage src={embedded} alt="IoT.ON™ Embedded Software" />
-
         <ProjectTable
-          project="IoT.ON™ Embedded Software"
           title="Frontend Developer"
-          team="At least two teams"
-          stack="Frontend - React, backend - C++"
+          team={(
+            <div>
+              <div>More than two teams.</div>
+              <div>Project Manager</div>
+              <div>Front-end developer (one for all)</div>
+              <div>4-8 - Back-end developers</div>
+              <div>2 - QA Engineer</div>
+            </div>
+          )}
+          stack={(
+            <div>
+              <div>Front-end - React, Redux</div>
+              <div>Back-end - C++</div>
+            </div>
+          )}
         />
       </ProjectInfo>
     </>

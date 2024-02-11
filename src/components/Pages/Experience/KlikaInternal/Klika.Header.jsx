@@ -1,20 +1,31 @@
-import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
-import klika from '@/assets/images/projects/klika.png';
+import { ProjectInfo } from '@/common/components/Experience';
 import ProjectTable from '@/common/components/ProjectTable';
 
 function KlikaHeader() {
   return (
     <>
-      <SectionTitle>Project Info:</SectionTitle>
+      <h2 align="center">Klika Internal Projects</h2>
 
       <ProjectInfo>
-        <ProjectImage src={klika} alt="Klika Internal Projects" />
-
         <ProjectTable
-          project="Internal Projects"
           title="Fullstack Developer"
-          team="PM, 2 - Fullstack developer, 1 - QA"
-          stack="Frontend - React, backend - Nodejs, Symfony (PHP)."
+          team={(
+            <div>
+              <div>Project Manager</div>
+              <div>2 - Fullstack developers</div>
+              <div>QA Engineer</div>
+            </div>
+          )}
+          stack={(
+            <div>
+              <div>Front-end - React, Redux/Mobx</div>
+              <div>Back-end:</div>
+              <ul style={{ marginLeft: '1rem' }}>
+                <li><b>Time Off</b> - Nodejs</li>
+                <li><b>Employee management</b> - Symfony (PHP)</li>
+              </ul>
+            </div>
+          )}
         />
       </ProjectInfo>
     </>

@@ -15,9 +15,6 @@ function KlikaResponsibilities() {
           updating the design, optimizing the old API;
         </li>
         <li>monitoring of system users with integration into the database (MySQL/PostgreSQL) and AWS;</li>
-        <li>legacy code support, refactoring;</li>
-        <li>support/adding adaptability;</li>
-        <li>content manager.</li>
       </ProjectResponsibilities>
     </>
   );
