@@ -1,13 +1,16 @@
+import EmbTools from '@/components/Pages/Experience/IotechaEmbedded/Emb.Tools';
+import KlikaDescription from '@/components/Pages/Experience/KlikaInternal/Klika.Description';
+import KlikaHeader from '@/components/Pages/Experience/KlikaInternal/Klika.Header';
 import KlikaResponsibilities from '@/components/Pages/Experience/KlikaInternal/Klika.Responsibilities';
-import KlikaTools from '@/components/Pages/Experience/KlikaInternal/Klika.Tools';
-import ReferencesKlika from '@/components/Pages/Experience/References/klika';
 
 function Part4() {
   return (
     <>
+      <EmbTools />
+
+      <KlikaHeader />
+      <KlikaDescription />
       <KlikaResponsibilities />
-      <KlikaTools />
-      <ReferencesKlika />
     </>
   );
 }

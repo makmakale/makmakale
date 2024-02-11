@@ -14,7 +14,13 @@ function CargoHeader() {
           <ProjectTable
             project="CargoTrans"
             title="Fullstack Developer"
-            stack="Frontend - React, React Native, backend - Nodejs."
+            team="3 - Fullstack developers"
+            stack={(
+              <div>
+                <div>Front-end - React, React Native, Redux</div>
+                <div>Back-end - Nodejs</div>
+              </div>
+            )}
           />
         </div>
       </ProjectInfo>

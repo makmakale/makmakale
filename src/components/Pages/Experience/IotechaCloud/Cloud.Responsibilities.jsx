@@ -14,11 +14,6 @@ function CloudResponsibilities() {
           for specific plaza with the addition of configuration files for each type of plaza;
         </li>
         <li>developing a report on monitoring the charging devices for specific plasmas;</li>
-        <li>developing a filter by plaza nodes considering hierarchy, allowing selection of both a specific node and
-          considering hierarchy by parent;
-        </li>
-        <li>development of a search for the filter by nodes with the result output saving hierarchy;</li>
-        <li>Error Boundary integration;</li>
       </ProjectResponsibilities>
     </>
   );

@@ -5,6 +5,7 @@ import Part4 from '@/components/Pages/Experience/Partials/Part4';
 import Part5 from '@/components/Pages/Experience/Partials/Part5';
 import Part6 from '@/components/Pages/Experience/Partials/Part6';
 import Part7 from '@/components/Pages/Experience/Partials/Part7';
+import Part8 from '@/components/Pages/Experience/Partials/Part8';
 
 export const getComponent = (part) => {
   switch (part) {
@@ -22,6 +23,8 @@ export const getComponent = (part) => {
       return Part6;
     case 7:
       return Part7;
+    case 8:
+      return Part8;
     default:
       return null;
   }

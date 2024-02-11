@@ -13,7 +13,7 @@ export const CompanyHeader = styled.div`
 `;
 
 export const CompanyLogo = styled.img`
-  height: 40px;
+  height: ${(props) => props.height || 40}px;
   width: auto;
 
   @media screen and (${mobileWidth}) {
@@ -61,6 +61,14 @@ export const ProjectImage = styled.img`
   @media screen and (${mobileWidth}) {
     max-width: 100%;
   }
+`;
+
+export const ProjectImage2 = styled.img`
+  float: left;
+  max-width: 200px;
+  outline: 1px solid ${({ theme }) => theme.primaryColor};
+  border-radius: 10px;
+  margin-right: 1rem;
 `;
 
 export const ProjectTable = styled.table`

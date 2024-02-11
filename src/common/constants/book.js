@@ -15,10 +15,10 @@ const pages = [
   { component: Experience, part: 5 },
   { component: Experience, part: 6 },
   { component: Experience, part: 7 },
+  { component: Experience, part: 8 },
   { title: 'Skills', component: Skills },
   { title: 'Education', component: Education },
   { title: 'Projects', component: Projects },
-  { component: Projects, part: 2 },
 ];
 
 export const bookPages = pages.map((page, index) => ({ ...page, page: index + 1 }));

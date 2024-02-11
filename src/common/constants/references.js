@@ -1,4 +1,4 @@
-export const klikaReferences = [
+export const cloudReferences = [
   {
     name: 'Mohammad Shirazi',
     title: 'Project Manager',
@@ -17,6 +17,15 @@ export const klikaReferences = [
     project: 'Iotecha',
     link: 'https://www.linkedin.com/in/vitaly-andriyanets/',
   },
+  {
+    name: 'Alexey Begunov',
+    title: 'Front-end developer',
+    project: 'Iotecha',
+    link: 'https://www.linkedin.com/in/alex-begunov/',
+  },
+];
+
+export const klikaReferences = [
   {
     name: 'Maxim Malukalo',
     title: 'Project Manager',

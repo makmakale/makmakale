@@ -5,6 +5,7 @@ import ProjectTable from '@/common/components/ProjectTable';
 function MoomlaHeader() {
   return (
     <>
+      <h2 align="center">Moomla CMS</h2>
       <SectionTitle>Project Info:</SectionTitle>
 
       <ProjectInfo>
@@ -12,11 +13,16 @@ function MoomlaHeader() {
 
         <div>
           <ProjectTable
-            project="Moomla"
             title="Fullstack Developer"
-            stack="Frontend - React, backend - Nodejs"
+            stack={(
+              <div>
+                <div>Front-end - React, Handlebars</div>
+                <div>Back-end - Nodejs, MongoDB</div>
+              </div>
+            )}
           />
 
+          <p>MERN application.</p>
           <p><i>Examination project while passing JavaScript course in It-Academy.</i></p>
         </div>
       </ProjectInfo>

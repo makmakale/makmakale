@@ -1,7 +1,7 @@
-import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
 import foxhunt from '@/assets/images/projects/foxhunt.png';
-import ProjectTable from '@/common/components/ProjectTable';
+import { ProjectImage, ProjectInfo, SectionTitle } from '@/common/components/Experience';
 import ProjectDescription from '@/common/components/ProjectDescription';
+import ProjectTable from '@/common/components/ProjectTable';
 
 function FoxhuntHeader() {
   return (
@@ -14,7 +14,7 @@ function FoxhuntHeader() {
         <div className="content">
           <ProjectTable
             project="Fox Hunt"
-            title="Frontend Developer"
+            title="Front-end Developer"
             stack="React Native"
           />
 
