@@ -39,8 +39,8 @@ function ProjectTable({
 ProjectTable.propTypes = {
   project: PropTypes.string,
   title: PropTypes.string,
-  stack: PropTypes.string,
-  team: PropTypes.string,
+  stack: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  team: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 ProjectTable.defaultProps = {

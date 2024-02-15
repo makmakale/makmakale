@@ -1,7 +1,7 @@
 import { setNextPage, setPreviousPage, setSpecificPage } from '@/common/components/Pages/Pages.utils';
 import { coverRotateTimeout, initialPage, lastPageNavigation } from '@/common/constants/book';
 import { useBookContext } from '@/common/context/Book';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export const usePages = () => {
@@ -16,17 +16,17 @@ export const usePages = () => {
     }, { replace: true });
   }
 
-  function handlePrevPage() {
+  const handlePrevPage = useCallback(() => {
     handleSearchParams(setPreviousPage);
-  }
+  }, []);
 
-  function handleNextPage() {
+  const handleNextPage = useCallback(() => {
     handleSearchParams(setNextPage);
-  }
+  }, []);
 
-  function moveToPage(pageNumber) {
+  const moveToPage = useCallback((pageNumber) => {
     handleSearchParams(setSpecificPage, pageNumber);
-  }
+  }, []);
 
   function initialAnimation() {
     handleSearchParams(setSpecificPage, activePage, initialPage);
