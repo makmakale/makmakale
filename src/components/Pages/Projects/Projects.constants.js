@@ -11,7 +11,7 @@ const projectsSetup = [
     title: 'ToDo Board',
     img: todoImage,
     description: 'To Do board in Jira style with D&D (PERN app).',
-    viewLink: 'https://todo-board-uue7.onrender.com/',
+    viewLink: 'https://pern-todo-board.onrender.com/',
     sourceLink: 'https://github.com/makmakale/todo-board',
   },
   {
