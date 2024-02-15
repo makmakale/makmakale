@@ -13,7 +13,7 @@ function CloudResponsibilities() {
           chargers
           for specific plaza with the addition of configuration files for each type of plaza;
         </li>
-        <li>developing a report on monitoring the charging devices for specific plasmas;</li>
+        <li>developing a report on monitoring the charging devices for specific plazas;</li>
       </ProjectResponsibilities>
     </>
   );

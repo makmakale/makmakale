@@ -28,6 +28,16 @@ export const ProjectCardContentDetails = styled.div`
   text-align: center;
   color: #ffffff;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+  }
+
+  p {
+    flex-grow: 1;
+  }
 `;
 
 export const ProjectCardButtonsGroup = styled.div`

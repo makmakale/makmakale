@@ -11,7 +11,7 @@ function MoomlaHeader() {
       <ProjectInfo>
         <ProjectImage src={moomla} alt="Moomla Logo" width={150} />
 
-        <div>
+        <div className="content">
           <ProjectTable
             title="Fullstack Developer"
             stack={(

@@ -41,6 +41,7 @@ export const ProjectInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex-grow: 1;
   }
 
   @media screen and (${mobileWidth}) {

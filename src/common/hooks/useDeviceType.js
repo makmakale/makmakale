@@ -4,7 +4,7 @@ const useDeviceType = () => {
   const [isMobileOrTablet, setIsMobileOrTable] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 1279px)');
+    const mediaQuery = window.matchMedia('(max-device-width: 1279px)');
 
     const handleResize = (event) => {
       setIsMobileOrTable(event.matches);

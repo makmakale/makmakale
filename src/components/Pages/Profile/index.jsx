@@ -26,7 +26,7 @@ function ProfilePage() {
       <ProfileDescription>
         Hi, I&apos;m Maksim Makarenko, and I&apos;m highly skilled and motivated
         Frontend Developer with more than {experience} years of experience in developing
-        user-friendly and responsive web applications on such framework as React.
+        user-friendly and responsive web applications on such library as React.
       </ProfileDescription>
 
       <ProfileAbout />
