@@ -19,7 +19,7 @@ export const cloudReferences = [
   },
   {
     name: 'Alexey Begunov',
-    title: 'Front-end developer',
+    title: 'Frontend developer',
     project: 'Iotecha',
     link: 'https://www.linkedin.com/in/alex-begunov/',
   },

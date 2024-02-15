@@ -17,8 +17,8 @@ function CargoHeader() {
             team="3 - Fullstack developers"
             stack={(
               <div>
-                <div>Front-end - React, React Native, Redux</div>
-                <div>Back-end - Nodejs</div>
+                <div>Frontend - React, React Native, Redux</div>
+                <div>Backend - Nodejs</div>
               </div>
             )}
           />

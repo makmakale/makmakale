@@ -13,15 +13,15 @@ function EmbHeader() {
             <div>
               <div>More than two teams.</div>
               <div>Project Manager</div>
-              <div>Front-end developer (one for all)</div>
-              <div>4-8 - Back-end developers</div>
+              <div>Frontend developer (one for all)</div>
+              <div>4-8 - Backend developers</div>
               <div>2 - QA Engineer</div>
             </div>
           )}
           stack={(
             <div>
-              <div>Front-end - React, Redux</div>
-              <div>Back-end - C++</div>
+              <div>Frontend - React, Redux</div>
+              <div>Backend - C++</div>
             </div>
           )}
         />

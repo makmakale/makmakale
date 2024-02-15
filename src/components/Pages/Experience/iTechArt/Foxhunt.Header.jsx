@@ -14,7 +14,7 @@ function FoxhuntHeader() {
         <div className="content">
           <ProjectTable
             project="Fox Hunt"
-            title="Front-end Developer"
+            title="Frontend Developer"
             stack="React Native"
           />
 

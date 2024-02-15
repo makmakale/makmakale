@@ -16,8 +16,8 @@ function MoomlaHeader() {
             title="Fullstack Developer"
             stack={(
               <div>
-                <div>Front-end - React, Handlebars</div>
-                <div>Back-end - Nodejs, MongoDB</div>
+                <div>Frontend - React, Handlebars</div>
+                <div>Backend - Nodejs, MongoDB</div>
               </div>
             )}
           />

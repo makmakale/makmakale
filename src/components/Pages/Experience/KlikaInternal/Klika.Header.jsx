@@ -18,8 +18,8 @@ function KlikaHeader() {
           )}
           stack={(
             <div>
-              <div>Front-end - React, Redux/Mobx</div>
-              <div>Back-end:</div>
+              <div>Frontend - React, Redux/Mobx</div>
+              <div>Backend:</div>
               <ul style={{ marginLeft: '1rem' }}>
                 <li><b>Time Off</b> - Nodejs</li>
                 <li><b>Employee management</b> - Symfony (PHP)</li>

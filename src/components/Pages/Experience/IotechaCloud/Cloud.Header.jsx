@@ -12,15 +12,15 @@ function CloudHeader() {
           team={(
             <div>
               <div>Project Manager, Business Analyst</div>
-              <div>2 - Front-end developers</div>
-              <div>4 - Back-end developers</div>
+              <div>2 - Frontend developers</div>
+              <div>4 - Backend developers</div>
               <div>2 - QA Engineer</div>
             </div>
           )}
           stack={(
             <div>
-              <div>Front-end - React, Redux</div>
-              <div>Back-end - Java/AWS</div>
+              <div>Frontend - React, Redux</div>
+              <div>Backend - Java/AWS</div>
             </div>
           )}
         />
