@@ -11,8 +11,8 @@ const projectsSetup = [
     title: 'ToDo Board',
     img: todoImage,
     description: 'To Do board in Jira style with D&D (PERN app).',
-    viewLink: 'https://pern-todo-board.onrender.com/',
-    sourceLink: 'https://github.com/makmakale/todo-board',
+    viewLink: 'https://pern-todo-board.vercel.app',
+    sourceLink: 'https://github.com/makmakale/pern-todo-board',
   },
   {
     title: 'Portfolio',
