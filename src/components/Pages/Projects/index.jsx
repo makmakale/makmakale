@@ -21,7 +21,7 @@ function Projects({ title, part }) {
   }, [part]);
 
   return (
-    <PageContent title={part === 1 ? title : null}>
+    <PageContent title={title}>
       <ProjectsContainer>
         {slicedProjects.map((project) => (
           <ProjectCard key={project.id}>

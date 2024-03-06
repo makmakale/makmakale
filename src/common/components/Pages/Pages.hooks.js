@@ -18,15 +18,15 @@ export const usePages = () => {
 
   const handlePrevPage = useCallback(() => {
     handleSearchParams(setPreviousPage);
-  }, []);
+  }, [activePage]);
 
   const handleNextPage = useCallback(() => {
     handleSearchParams(setNextPage);
-  }, []);
+  }, [activePage]);
 
   const moveToPage = useCallback((pageNumber) => {
     handleSearchParams(setSpecificPage, pageNumber);
-  }, []);
+  }, [activePage]);
 
   function initialAnimation() {
     handleSearchParams(setSpecificPage, activePage, initialPage);
@@ -59,7 +59,7 @@ export const usePages = () => {
       document.removeEventListener('keyup', handleKeyPress);
       clearTimeout(coverTimeout);
     };
-  }, [isBookOpened]);
+  }, [isBookOpened, handlePrevPage, handleNextPage]);
 
-  return { handlePrevPage, handleNextPage };
+  return { handlePrevPage, handleNextPage, moveToPage };
 };

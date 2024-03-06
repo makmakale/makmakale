@@ -19,7 +19,7 @@ const pages = [
   { title: 'Skills', component: Skills },
   { title: 'Education', component: Education },
   { title: 'Projects', component: Projects },
-  { title: 'Projects', component: Projects, part: 2 },
+  { component: Projects, part: 2 },
 ];
 
 export const bookPages = pages.map((page, index) => ({ ...page, page: index + 1 }));
