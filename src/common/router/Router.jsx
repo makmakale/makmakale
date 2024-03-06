@@ -1,4 +1,4 @@
-import App from '@/App';
+import App from '@/_app/App';
 import ErrorPage from '@/common/ErrorPage';
 import { createBrowserRouter } from 'react-router-dom';
 

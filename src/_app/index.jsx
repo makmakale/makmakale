@@ -1,7 +1,7 @@
+import '@/_app/index.css';
+import router from '@/common/router/Router';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import router from '@/common/router/Router';
-import '@/index.css';
 
 function noop() {
 }

@@ -1,5 +1,6 @@
 import photo from '@/assets/images/profile/photo.jpg';
 import PageContent from '@/common/components/PageContent';
+import { MY_NAME } from '@/common/constants/common';
 import ProfileAbout from '@/components/Pages/Profile/Profile.About';
 import ProfileContacts from '@/components/Pages/Profile/Profile.Contacts';
 import ProfileDownloadCv from '@/components/Pages/Profile/Profile.DownloadCV';
@@ -17,14 +18,14 @@ function ProfilePage() {
   return (
     <PageContent centered>
       <ProfileImage>
-        <img src={photo} alt="Maksim Makrenko" />
+        <img src={photo} alt={MY_NAME} />
       </ProfileImage>
 
-      <ProfileName>Maksim Makarenko</ProfileName>
+      <ProfileName>{MY_NAME}</ProfileName>
       <ProfileJobTitle>Frontend Developer</ProfileJobTitle>
 
       <ProfileDescription>
-        Hi, I&apos;m Maksim Makarenko, and I&apos;m highly skilled and motivated
+        Hi, I&apos;m {MY_NAME}, and I&apos;m highly skilled and motivated
         Frontend Developer with more than {experience} years of experience in developing
         user-friendly and responsive web applications on such library as React.
       </ProfileDescription>
