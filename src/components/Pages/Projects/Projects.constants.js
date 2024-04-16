@@ -5,13 +5,13 @@ import tetrisImage from '@/assets/images/my-projects/tetris-small.jpg';
 import todoImage from '@/assets/images/my-projects/todo-small.jpg';
 import jslabImage from '@/assets/images/projects/cargo-trans.png';
 import moomlaImage from '@/assets/images/projects/moomla.png';
-import nextTodos from '@/assets/images/my-projects/todos.jpeg';
+import nextTodos from '@/assets/images/my-projects/todos-small.jpg';
 
 const projectsSetup = [
   {
     img: nextTodos,
     title: 'Nextjs ToDo Board',
-    description: 'ToDo Board on Next.js 14 with some improvements (UNDER DEVELOPMENT).',
+    description: 'First Next.js project with tailwind.',
     viewLink: 'https://next-todos-tw.vercel.app/',
     sourceLink: 'https://github.com/makmakale/next-todos-tailwind',
   },
