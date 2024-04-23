@@ -12,7 +12,7 @@ const projectsSetup = [
     img: nextTodos,
     title: 'Nextjs ToDo Board',
     description: 'First Next.js project with tailwind.',
-    viewLink: 'https://next-todos-tw.vercel.app/',
+    viewLink: 'https://next-todos-tw.netlify.app/',
     sourceLink: 'https://github.com/makmakale/next-todos-tailwind',
   },
   {
