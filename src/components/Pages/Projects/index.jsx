@@ -16,8 +16,8 @@ function Projects({ title, part }) {
   const [slicedProjects, setSlicedProjects] = useState(projects);
 
   useEffect(() => {
-    const nextPart = part * 4;
-    setSlicedProjects(projects.slice(nextPart - 4, nextPart));
+    const nextPart = part * 3;
+    setSlicedProjects(projects.slice(nextPart - 3, nextPart));
   }, [part]);
 
   return (
@@ -27,11 +27,11 @@ function Projects({ title, part }) {
           <ProjectCard key={project.id}>
             <ProjectLines />
 
-            <ProjectCardImage>
-              <img src={project.img} alt={project.title} />
-            </ProjectCardImage>
-
             <ProjectCardContent>
+              <ProjectCardImage>
+                <img src={project.img} alt={project.title} />
+              </ProjectCardImage>
+
               <ProjectCardContentDetails>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>

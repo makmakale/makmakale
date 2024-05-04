@@ -7,227 +7,226 @@ const THIRD_BG_COLOR = '#5fa7ff';
 const FORTH_BG_COLOR = '#af5fff';
 
 export const ProjectsContainer = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-
-  @media screen and (${mobileWidth}) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+    margin-bottom: 1rem;
 `;
 
 export const ProjectCardContent = styled.div`
-  flex-grow: 1;
-  overflow: hidden;
-  z-index: 1;
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-grow: 1;
+    width: 100%;
 `;
 
 export const ProjectCardContentDetails = styled.div`
-  padding: 1rem 1.5rem;
-  text-align: center;
-  color: #ffffff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-  h3 {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
-  }
+    h3 {
+        font-size: 2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+        margin-bottom: .5rem;
+    }
 
-  p {
-    flex-grow: 1;
-  }
+    p {
+        flex-grow: 1;
+    }
 `;
 
 export const ProjectCardButtonsGroup = styled.div`
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    margin-top: 10px;
+    display: flex;
+    gap: 1rem;
 
-  a {
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    text-shadow: 1px 1px 2px black;
-  }
+        @media screen and (${mobileWidth}) {
+                flex-direction: column;
+                text-align: center;
+        }
+
+    a {
+        color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        text-shadow: 1px 1px 2px black;
+    }
 `;
 
 export const ProjectCardImage = styled.div`
-  position: relative;
-  top: 15px;
-  width: 200px;
-  height: 150px;
-  padding: 10px;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+    padding: 10px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
-  @media screen and (${mobileWidth}) {
-    width: 250px;
-    height: 200px;
-  }
-
-  &::before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 150px;
-    background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
-    animation: animateCardImageLines 6s linear infinite;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    inset: 3px;
-    background: #292929;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    z-index: 1;
-  }
-
-  @keyframes animateCardImageLines {
-    0% {
-      transform: translate(-50%, -50%) rotate(360deg);
+    &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 150px;
+        background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+        animation: animateCardImageLines 6s linear infinite;
     }
-    100% {
-      transform: translate(-50%, -50%) rotate(0deg);
+
+    &::after {
+        position: absolute;
+        content: '';
+        inset: 3px;
+        background: #292929;
     }
-  }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 1;
+    }
+
+    @keyframes animateCardImageLines {
+        0% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
 `;
 
 export const ProjectLines = styled.div`
-  position: absolute;
-  inset: 0;
-  background: #000;
-  overflow: hidden;
-
-  &::before {
     position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 120px;
-    background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
-    animation: animateCardLines 4s linear infinite;
-  }
+    inset: 0;
+    background: #000;
+    overflow: hidden;
 
-  &::after {
-    position: absolute;
-    content: '';
-    inset: 3px;
-    background: ${({ theme }) => theme.projectBg};
-  }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 120px;
+        background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+        animation: animateCardLines 4s linear infinite;
+    }
 
-  @keyframes animateCardLines {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
+    &::after {
+        position: absolute;
+        content: '';
+        inset: 3px;
+        background: ${({ theme }) => theme.projectBg};
     }
-    100% {
-      transform: translate(-50%, -50%) rotate(360deg);
+
+    @keyframes animateCardLines {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
     }
-  }
 `;
 
 export const ProjectCard = styled.div`
-  position: relative;
-  width: 100%;
-  min-height: 380px;
-  background: ${({ theme }) => theme.primaryColorDark};
-  transition: .5s;
+    position: relative;
+    width: 100%;
+    background: ${({ theme }) => theme.primaryColorDark};
+    transition: .5s;
+    flex-grow: 1;
 
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
 
-  &:nth-child(1) {
-    ${ProjectCardContent} {
-      h3 {
-        color: ${FIRST_BG_COLOR};
-      }
+    &:nth-child(1) {
+        ${ProjectCardContent} {
+            h3 {
+                color: ${FIRST_BG_COLOR};
+            }
+        }
+
+        ${ProjectCardButtonsGroup} {
+            a {
+                background: ${FIRST_BG_COLOR};
+            }
+        }
     }
 
-    ${ProjectCardButtonsGroup} {
-      a {
-        background: ${FIRST_BG_COLOR};
-      }
-    }
-  }
+    &:nth-child(2) {
+        ${ProjectLines},
+        ${ProjectCardImage} {
+            &::before {
+                animation-delay: .5s;
+            }
+        }
 
-  &:nth-child(2) {
-    ${ProjectLines},
-    ${ProjectCardImage} {
-      &::before {
-        animation-delay: .5s;
-      }
-    }
+        ${ProjectCardContent} {
+            h3 {
+                color: ${SECOND_BG_COLOR};
+            }
+        }
 
-    ${ProjectCardContent} {
-      h3 {
-        color: ${SECOND_BG_COLOR};
-      }
-    }
-
-    ${ProjectCardButtonsGroup} {
-      a {
-        background: ${SECOND_BG_COLOR};
-      }
-    }
-  }
-
-  &:nth-child(3) {
-    ${ProjectLines},
-    ${ProjectCardImage} {
-      &::before {
-        animation-delay: 1s;
-      }
+        ${ProjectCardButtonsGroup} {
+            a {
+                background: ${SECOND_BG_COLOR};
+            }
+        }
     }
 
-    ${ProjectCardContent} {
-      h3 {
-        color: ${THIRD_BG_COLOR};
-      }
+    &:nth-child(3) {
+        ${ProjectLines},
+        ${ProjectCardImage} {
+            &::before {
+                animation-delay: 1s;
+            }
+        }
+
+        ${ProjectCardContent} {
+            h3 {
+                color: ${THIRD_BG_COLOR};
+            }
+        }
+
+        ${ProjectCardButtonsGroup} {
+            a {
+                background: ${THIRD_BG_COLOR};
+            }
+        }
     }
 
-    ${ProjectCardButtonsGroup} {
-      a {
-        background: ${THIRD_BG_COLOR};
-      }
-    }
-  }
+    &:nth-child(4) {
+        ${ProjectLines},
+        ${ProjectCardImage} {
+            &::before {
+                animation-delay: 1.5s;
+            }
+        }
 
-  &:nth-child(4) {
-    ${ProjectLines},
-    ${ProjectCardImage} {
-      &::before {
-        animation-delay: 1.5s;
-      }
-    }
+        ${ProjectCardContent} {
+            h3 {
+                color: ${FORTH_BG_COLOR};
+            }
+        }
 
-    ${ProjectCardContent} {
-      h3 {
-        color: ${FORTH_BG_COLOR};
-      }
+        ${ProjectCardButtonsGroup} {
+            a {
+                background: ${FORTH_BG_COLOR};
+            }
+        }
     }
-
-    ${ProjectCardButtonsGroup} {
-      a {
-        background: ${FORTH_BG_COLOR};
-      }
-    }
-  }
 `;
