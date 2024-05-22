@@ -1,18 +1,11 @@
 import { ProfileSection, ProfileSectionTitle, ProfileTable } from '@/components/Pages/Profile/Profile.styled';
-import { getMyAge } from '@/components/Pages/Profile/Profile.utils';
 
 function ProfileAbout() {
-  const age = getMyAge();
-
   return (
     <ProfileSection>
       <ProfileSectionTitle>About Me</ProfileSectionTitle>
       <ProfileTable>
         <tbody>
-          <tr>
-            <td>Age:</td>
-            <td>{age} years<span className="small">(4/18/1987)</span></td>
-          </tr>
           <tr>
             <td>Location:</td>
             <td>Belarus, Minsk<span className="small">(no relocation)</span></td>
