@@ -18,9 +18,12 @@ function Cover() {
     <BookWrapper open={isBookOpened}>
       <CoverLeft ref={leftCoverRef} onClick={isMobileOrTablet ? null : openBook}>
         <CoverContent>
-          <h3>{MY_NAME}</h3>
-          <h1>Portfolio</h1>
-          <p>2023</p>
+          <h3>Portfolio</h3>
+          <div align="center">
+            <h1>{MY_NAME}</h1>
+            <h2>Frontend Developer</h2>
+          </div>
+          <p>&copy; 2023-{new Date().getFullYear()}</p>
         </CoverContent>
       </CoverLeft>
 

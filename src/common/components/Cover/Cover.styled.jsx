@@ -21,27 +21,43 @@ const Cover = styled.div`
 `;
 
 export const CoverContent = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  transition: opacity ${coverRotateTimeout / 2}ms;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    transition: opacity ${coverRotateTimeout / 2}ms;
 
-  h1 {
-    font-size: 4.5rem;
-    letter-spacing: .5rem;
-    text-transform: uppercase;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-    line-height: .7em;
-    text-shadow: 5px 5px 10px #000;
+    h1, h2 {
+        font-size: 4rem;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+        line-height: 1.1em;
+        text-align: center;
+        text-shadow: 5px 5px 10px #000;
 
-    @media screen and (${mobileWidth}) {
-      font-size: 3rem;
     }
-  }
+
+    h2 {
+        font-size: 2.1rem;
+        margin: 2rem 0;
+        letter-spacing: normal;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+    
+    @media screen and (${mobileWidth}) {
+        h1{
+            font-size: 2.7rem;
+        }
+        h2{
+            font-size: 1.4rem;
+        }
+    }
 `;
 
 export const CoverLeft = styled(Cover)`
