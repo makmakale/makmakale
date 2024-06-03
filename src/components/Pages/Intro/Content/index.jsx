@@ -1,9 +1,13 @@
 import { usePages } from '@/common/components/Pages/Pages.hooks';
 import { bookPages } from '@/common/constants/book';
 import { ContentList, ContentListItem } from '@/components/Pages/Intro/Content/Content.styled';
+import useDeviceType from '@/common/hooks/useDeviceType.js';
 
 function IntroContent() {
   const { moveToPage } = usePages();
+  const isMobileOrTablet = useDeviceType();
+
+  if (isMobileOrTablet) return null;
 
   return (
     <>

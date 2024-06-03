@@ -1,7 +1,7 @@
 import { mobileWidth } from '@/common/constants/media';
 import styled from 'styled-components';
 
-const FIRST_BG_COLOR = '#ff4d4d';
+const FIRST_BG_COLOR = '#ff3939';
 const SECOND_BG_COLOR = '#3ae374';
 const THIRD_BG_COLOR = '#5fa7ff';
 const FORTH_BG_COLOR = '#af5fff';
@@ -21,6 +21,12 @@ export const ProjectCardContent = styled.div`
     gap: 1rem;
     flex-grow: 1;
     width: 100%;
+
+    h3 {
+        text-shadow: 0 0 10px black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(0, 0, 0, .3);
+    }
 `;
 
 export const ProjectCardContentDetails = styled.div`
@@ -45,10 +51,10 @@ export const ProjectCardButtonsGroup = styled.div`
     display: flex;
     gap: 1rem;
 
-        @media screen and (${mobileWidth}) {
-                flex-direction: column;
-                text-align: center;
-        }
+    @media screen and (${mobileWidth}) {
+        flex-direction: column;
+        text-align: center;
+    }
 
     a {
         color: #fff;

@@ -2,14 +2,16 @@ import { coverRotateTimeout } from '@/common/constants/book';
 import { useBookContext } from '@/common/context/Book';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import useDeviceType from '@/common/hooks/useDeviceType.js';
 
 export const useCoverHook = (leftCoverRef) => {
   const { isBookOpened, openBook } = useBookContext();
+  const isMobileOrTablet = useDeviceType();
   const [searchParams] = useSearchParams();
   const activePage = Number(searchParams.get('page'));
 
   useEffect(() => {
-    if (!isBookOpened) return;
+    if (!isBookOpened || isMobileOrTablet) return;
 
     const coverTimeout = setTimeout(() => {
       leftCoverRef.current.classList.add('turn');
@@ -24,7 +26,7 @@ export const useCoverHook = (leftCoverRef) => {
     return () => {
       clearTimeout(coverTimeout);
     };
-  }, [isBookOpened]);
+  }, [isBookOpened, isMobileOrTablet]);
 
   useEffect(() => {
     let openBookIntervalId = null;

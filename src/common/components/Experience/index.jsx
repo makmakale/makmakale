@@ -29,6 +29,10 @@ export const WorkPeriod = styled.div`
   align-items: center;
   position: relative;
   margin-bottom: auto;
+    background-color: #eee;
+    padding: .4em .6em;
+    border-radius: 9999px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.4);
 `;
 
 export const ProjectInfo = styled.div`
@@ -119,14 +123,8 @@ export const SectionTitle = styled.h4`
 `;
 
 export const ReferencesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
 
   @media screen and (${mobileWidth}) {
-    grid-template-columns: 1fr;
-    place-items: center;
-
     > div {
       text-align: center;
     }
@@ -156,7 +154,7 @@ export const ReferenceName = styled.p`
   font-size: 1.125rem;
 `;
 
-export const ReferenceTitle = styled.p`
+export const ReferenceTitle = styled.span`
   font-weight: 600;
   font-style: italic;
   text-decoration: underline;

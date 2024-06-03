@@ -24,12 +24,3 @@ export const cloudReferences = [
     link: 'https://www.linkedin.com/in/alex-begunov/',
   },
 ];
-
-export const klikaReferences = [
-  {
-    name: 'Maxim Malukalo',
-    title: 'Project Manager',
-    project: 'Klika Internal Projects',
-    link: 'https://www.linkedin.com/in/maximmalukalo/',
-  },
-];

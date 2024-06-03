@@ -5,10 +5,11 @@ import mobxIcon from '@/assets/images/skills/mobx.svg';
 import nextjsIcon from '@/assets/images/skills/nextjs.svg';
 import formikIcon from '@/assets/images/skills/formik.svg';
 import PageContent from '@/common/components/PageContent';
-import {
-  SkillsBackEndSection, SkillsBox, SkillsContent, SkillsSection,
-} from '@/components/Pages/Skills/Skills.styled';
+import { SkillsBox, SkillsContent, SkillsSection } from '@/components/Pages/Skills/Skills.styled';
 import PropTypes from 'prop-types';
+
+const prismaIcon = 'https://cdn.icon-icons.com/icons2/2148/PNG/512/prisma_icon_132076.png';
+const sequelizeIcon = 'https://cdn.icon-icons.com/icons2/2415/PNG/512/sequelize_original_logo_icon_146348.png';
 
 function Skills({ title }) {
   return (
@@ -34,22 +35,25 @@ function Skills({ title }) {
         </SkillsContent>
       </SkillsSection>
 
-      <SkillsBackEndSection>
+      <SkillsSection>
         <SkillsSection>
           <h2>Backend</h2>
           <SkillsContent className="content">
-            <SkillsBox style={{ width: 120 }}><i className="bx bxl-nodejs" />node /<br /> express</SkillsBox>
+            <SkillsBox><i className="bx bxl-nodejs" />node /<br /> express</SkillsBox>
+            <SkillsBox><img src={nextjsIcon} alt="next" />next</SkillsBox>
           </SkillsContent>
         </SkillsSection>
+      </SkillsSection>
 
-        <SkillsSection>
-          <h2>Data</h2>
-          <SkillsContent className="content">
-            <SkillsBox><i className="bx bxl-postgresql" />mysql / postgresql</SkillsBox>
-            <SkillsBox><i className="bx bxl-mongodb" />mongodb</SkillsBox>
-          </SkillsContent>
-        </SkillsSection>
-      </SkillsBackEndSection>
+      <SkillsSection>
+        <h2>Data</h2>
+        <SkillsContent className="content">
+          <SkillsBox><i className="bx bxl-postgresql" />mysql / postgresql</SkillsBox>
+          <SkillsBox><img src={sequelizeIcon} alt="sequelize" />Sequelize</SkillsBox>
+          <SkillsBox><i className="bx bxl-mongodb" />mongodb</SkillsBox>
+          <SkillsBox><img src={prismaIcon} alt="Prisma" />Prisma</SkillsBox>
+        </SkillsContent>
+      </SkillsSection>
     </PageContent>
   );
 }

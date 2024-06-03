@@ -1,4 +1,4 @@
-import cvDownload from '@/assets/files/mmakarenko-cv-frontend-ru.pdf';
+import cvDownload from '@/assets/files/mmakarenko-cv-frontend.pdf';
 import { ProfileDownloadCV } from '@/components/Pages/Profile/Profile.styled';
 
 function ProfileDownloadCv() {

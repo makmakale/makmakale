@@ -29,6 +29,18 @@ function ProfileContacts() {
               </a>
             </td>
           </tr>
+          <tr>
+            <td>Github:</td>
+            <td>
+              <a
+                href="https://github.com/makmakale?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View projects
+              </a>
+            </td>
+          </tr>
         </tbody>
       </ProfileTable>
     </ProfileSection>
