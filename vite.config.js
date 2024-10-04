@@ -23,7 +23,7 @@ export default defineConfig(({ command }) => {
   };
 
   if (command !== 'serve') {
-    config.base = '/portfolio/';
+    config.base = '/old-portfolio/';
   }
 
   return config;

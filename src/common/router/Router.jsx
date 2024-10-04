@@ -8,6 +8,6 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
   },
-], { basename: import.meta.env.DEV ? '/' : '/portfolio/' });
+], { basename: import.meta.env.DEV ? '/' : '/old-portfolio/' });
 
 export default router;

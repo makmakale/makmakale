@@ -26,7 +26,7 @@ const projectsSetup = [
     title: 'Portfolio',
     img: portfolioImage,
     description: 'You are currently in. But you can view source code by the link below.',
-    sourceLink: 'https://github.com/makmakale/portfolio',
+    sourceLink: 'https://github.com/makmakale/old-portfolio',
   },
   {
     title: 'Tetris',
